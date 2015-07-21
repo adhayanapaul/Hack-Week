@@ -1,0 +1,53 @@
+
+<html>
+	<head>
+		<title>My Page</title> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="contactList.js"></script> <!-- we have to create this file-->
+	</head>
+
+	<script>
+		var changePicture= function(){
+			$("#select-choice-1").val()
+			var filename = $("#select-choice-1").val() + ".jpg"
+			$("#pic").attr('src',filename);
+		}
+	</script>
+
+
+	<body> 
+		<div data-role="page">
+			<div data-role="header">
+				<h1>Rise Against</h1>
+			</div><!-- /header -->
+			<div data-role="content">	
+				<div data-role="collapsible-set" id="songHolder"</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+
+
+		<form>
+  <input id="pre-rendered-filterable" data-type="search">
+</form>
+<div
+  class="ui-controlgroup ui-controlgroup-vertical ui-corner-all"
+  data-role="controlgroup"
+  data-filter="true"
+  data-input="#pre-rendered-filterable"
+  data-filter-reveal="true"
+  data-enhanced="true">
+  <div class="ui-controlgroup-controls">
+    <a href="index.html" class="ui-screen-hidden" data-role="collapsible-set">Satellite</a>
+    <a href="settings.html" class="ui-screen-hidden" data-role="button">Paper Wings</a>
+    <a href="advanced.html" class="ui-screen-hidden" data-role="button">Ready to Fall</a>
+  </div>
+</div>
+
+
+
+	<script src="Lyrics.js"></script>
+	</body>
+</html>
