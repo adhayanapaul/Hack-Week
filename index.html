@@ -12,28 +12,23 @@
 
 <script>
 	var PageToMaterial = function(){
-		if ($("#select-choice-1").val() == "Metals"){
+		if ($("#select-choice-1m").val() == "Metals"){
 			$.mobile.changePage( "#MetalCan", { transition: "pop", changeHash: true });
 		}else{
 			$.mobile.changePage( "#Select A Material", { transition: "pop", changeHash: true });
 		}
 	}
-</script>
 
-
-<script>
 	var CanToDestiny = function(){
-		if ($("#select-choice-2").val() == "Yes"){
+		if ($("#select-choice-2m").val() == "Yes"){
 			$.mobile.changePage( "#MetalRecycle", { transition: "pop", changeHash: true });
 		}else{
 			$.mobile.changePage( "#MetalFoil", { transition: "pop", changeHash: true });
 		}
 	}
-</script>
 
-<script>
 	var FoilToDestiny = function(){
-		if ($("#select-choice-3").val() == "Yes"){
+		if ($("#select-choice-3m").val() == "Yes"){
 			$.mobile.changePage( "#MetalTrash", { transition: "pop", changeHash: true });
 		}else{
 			$.mobile.changePage( "#MetalScrap", { transition: "pop", changeHash: true });
@@ -42,13 +37,14 @@
 </script>
 
 
+
 <div data-role="page" id="Select a Material">
 	<div data-role="header">
 		<h1>My Title</h1>
 	</div><!-- /header -->
 
-	<label for="select-choice-1" class="select"></label>
-		<select name="select-choice-1" id="select-choice-1" data-native-menu="false">
+	<label for="select-choice-1m" class="select"></label>
+		<select name="select-choice-1m" id="select-choice-1m" data-native-menu="false">
 			<option >Select A Material</option>
 		   <option value="Plastic">Plastic</option>
 		   <option value="Paper/Cardboard">Paper/Cardboard</option>
@@ -66,8 +62,8 @@
 		<h1>Metals</h1>
 	</div><!-- /header -->
 
-	<label for="select-choice-2" class="select"></label>
-		<select name="select-choice-2" id="select-choice-2" data-native-menu="false">
+	<label for="select-choice-2m" class="select"></label>
+		<select name="select-choice-2m" id="select-choice-2m" data-native-menu="false">
 			<option>Is it a Bottle or a Can?</option>
 		   <option value="Yes">Yes</option>
 		   <option value="No">No</option>
@@ -92,8 +88,8 @@
 		<h1>Metals</h1>
 	</div><!-- /header -->
 
-	<label for="select-choice-3" class="select"></label>
-		<select name="select-choice-3" id="select-choice-3" data-native-menu="false">
+	<label for="select-choice-3m" class="select"></label>
+		<select name="select-choice-3m" id="select-choice-3m" data-native-menu="false">
 			<option>Is it Foil?</option>
 		   <option value="Yes">Yes</option>
 		   <option value="No">No</option>
