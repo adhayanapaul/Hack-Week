@@ -18,6 +18,10 @@
 			$.mobile.changePage( "#pagePlastic", { transition: "pop", changeHash: true });
 		}else if ($("#select-choice-1m").val() == "Glass"){
 			$.mobile.changePage( "#pageGlass", { transition: "pop", changeHash: true });
+		}else if ($("#select-choice-1m").val() == "Styrofoam"){
+			$.mobile.changePage( "#pageStyrofoam", { transition: "pop", changeHash: true });
+		}else if ($("#select-choice-1m").val() == "Food"){
+			$.mobile.changePage( "#pageFood", { transition: "pop", changeHash: true });
 		}else{
 			$.mobile.changePage( "#Select A Material", { transition: "pop", changeHash: true });
 		}
@@ -162,6 +166,20 @@
 	
 </div>
 
+<!-- Styrofoam Code -->
+<div data-role="page" id="pageStyrofoam">
+	<div data-role="header">
+		<h1>Styrofoam</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Throw it away in the trash.</p>		
+	</div><!-- /content -->
+</div><!-- /page -->
+
+
+
+
 <!-- Glass Code -->
 <div data-role="page" id="pageGlass">
 
@@ -268,6 +286,20 @@
 		<p>To the scrap metal center!</p>		
 	</div><!-- /content -->
 </div><!-- /page -->
+
+
+<!-- Food Code -->
+<div data-role="page" id="pageFood">
+	<div data-role="header">
+		<h1>Food</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Compost it.</p>	
+	</div><!-- /content -->
+</div><!-- /page -->
+
+
 
 
 </body>
