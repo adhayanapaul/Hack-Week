@@ -10,7 +10,7 @@
 <body> 
 
 
-<div data-role="page" id="pc">
+<div data-role="page" id="paper">
 	<div data-role="header">
 			<h1>Paper/Cardboard</h1>
 	</div>
@@ -29,7 +29,7 @@
 	<div data-role="header">
 			<h1>Paper/Cardboard</h1>
 	</div>
-	<div data-role="content">
+	<div data-role="content"class="Page">
 		<p>Throw away in compost/garbage.</p>
 	</div>
 </div>
@@ -38,23 +38,19 @@
 	<div data-role="header">
 			<h1>Paper/Cardboard</h1>
 	</div>
-	<div data-role="content">
+	<div data-role="content" class="Page">
 		<p>Throw away in recycling.</p>
+		<img src="Recycling.jpg" alt="some_text">
 	</div>
 </div>
 
 
 <!--Stylizing the answers-->
 <style>
-#Yes{
+.Page{
 	text-align:center;
 	font-size:120%;
-	background-color:green;
-}
-#No{
-	text-align:center;
-	font-size:120%;
-	background-color: #66CCFF;
+	border:10px solid blue;
 }
 </style>
 
