@@ -10,40 +10,48 @@
 <body> 
 
 
-<div data-role="page" id="p/c">
+<div data-role="page" id="pc">
 	<div data-role="header">
 			<h1>Paper/Cardboard</h1>
 	</div>
 	<div data-role="content">
 		<label for="select-choice-0" class="select"></label>
 		<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
-	   		<option value=>Food soaked?</option>
+	   		<option value=>Is your paper/cardboard food soaked?</option>
 	   		<option id="yes" value="yes">yes</option>
 	  		<option id="no" value="no">no</option>
-	  		<input type="button" value="Submit"data-theme="b" onclick="changePicture()">
+	  		<input type="button" value="Submit"data-theme="b" onclick="changePaper()">
 		</select>
 	</div>
+</div>
 
-
-<div data-role="page" id="p/c">
+<div data-role="page" id="Yes">
 	<div data-role="header">
-			<h1>Food</h1>
+			<h1>Paper/Cardboard</h1>
 	</div>
 	<div data-role="content">
-		<label for="select-choice-0" class="select"></label>
-		<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
-	   		<option value=>Compost/Garbage</option>
-		</select>
+		<p>Throw away in compost/garbage.</p>
 	</div>
+</div>
+
+<div data-role="page" id="No">
+	<div data-role="header">
+			<h1>Paper/Cardboard</h1>
+	</div>
+	<div data-role="content">
+		<p>Throw away in recycling.</p>
+	</div>
+</div>
+
 
 
 <script>
-var changePicture =function(){
+var changePaper =function(){
 	if ($("#select-choice-1").val()=="yes"){
-		alert("compost/garbage");
+		$.mobile.changePage( "#Yes", { transition: "pop"} );
 	}
 	else if ($("#select-choice-1").val()=="no"){
-		alert("recycle");
+		$.mobile.changePage( "#No", { transition: "pop"} );
 	}
 }
 </script>
@@ -52,10 +60,3 @@ var changePicture =function(){
 
 </body>
 </html>
-
-
-
-
-
-
-
