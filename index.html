@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+</head> 
+<body> 
+
+
+<script>
+	var PageToMaterial = function(){
+		if ($("#select-choice-1").val() == "Metals"){
+			$.mobile.changePage( "#MetalCan", { transition: "slideup", changeHash: true });
+		}else{
+			$.mobile.changePage( "#Select A Material", { transition: "slideup", changeHash: true });
+		}
+	}
+</script>
+
+
+<script>
+	var CanToDestiny = function(){
+		if ($("#select-choice-1").val() == "Yes"){
+			$.mobile.changePage( "#MetalRecycle", { transition: "slideup", changeHash: true });
+		}else{
+			$.mobile.changePage( "#MetalFoil", { transition: "slideup", changeHash: true });
+		}
+	}
+</script>
+
+
+<div data-role="page" id="Select a Material">
+	<div data-role="header">
+		<h1>My Title</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Select a Material</p>		
+	</div><!-- /content -->
+
+	<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
+	   <option value="Plastic">Plastic</option>
+	   <option value="Paper/Cardboard">Paper/Cardboard</option>
+	   <option value="Styrofoam">Styrofoam</option>
+	   <option value="Glass">Glass</option>
+	   <option value="Metals">Metals</option>
+	   <option value="Food">Food</option>
+	   <input type="button" value="Submit" data-theme="b" onClick="PageToMaterial()">
+	</select>
+</div><!-- /page -->
+
+
+<div data-role="pageMetals" id="MetalCan">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Is it a bottle or can?</p>		
+	</div><!-- /content -->
+
+	<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
+	   <option value="Yes">Yes</option>
+	   <option value="No">No</option>
+	   <input type="button" value="Submit" data-theme="b" onClick="changePicture()">
+	</select>
+</div><!-- /page -->
+
+
+<div data-role="pageMetals" id="MetalRecycle">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>To the recycling bin!</p>		
+	</div><!-- /content -->
+</div><!-- /page -->
+
+
+<div data-role="pageMetals" id="MetalFoil">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>Is it foil?</p>		
+	</div><!-- /content -->
+
+	<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
+	   <option value="Yes">Yes</option>
+	   <option value="No">No</option>
+	   <input type="button" value="Submit" data-theme="b" onClick="changePicture()">
+	</select>
+</div><!-- /page -->
+
+<div data-role="pageMetals">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>To the trash!</p>		
+	</div><!-- /content -->
+</div><!-- /page -->
+
+<div data-role="pageMetals">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>To the scrap metal center!</p>		
+	</div><!-- /content -->
+</div><!-- /page -->
+
+</body>
+</html>

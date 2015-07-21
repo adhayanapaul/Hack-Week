@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+<body> 
+
+
+<div data-role="page" id="p/c">
+	<div data-role="header">
+			<h1>Paper/Cardboard</h1>
+	</div>
+	<div data-role="content">
+		<label for="select-choice-0" class="select"></label>
+		<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
+	   		<option value=>Food soaked?</option>
+	   		<option id="yes" value="yes">yes</option>
+	  		<option id="no" value="no">no</option>
+	  		<input type="button" value="Submit"data-theme="b" onclick="changePicture()">
+		</select>
+	</div>
+
+
+<div data-role="page" id="p/c">
+	<div data-role="header">
+			<h1>Food</h1>
+	</div>
+	<div data-role="content">
+		<label for="select-choice-0" class="select"></label>
+		<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
+	   		<option value=>Compost/Garbage</option>
+		</select>
+	</div>
+
+
+<script>
+var changePicture =function(){
+	if ($("#select-choice-1").val()=="yes"){
+		alert("compost/garbage");
+	}
+	else if ($("#select-choice-1").val()=="no"){
+		alert("recycle");
+	}
+}
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

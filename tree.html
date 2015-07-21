@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
+	<script>
+	
+		var changeGlassPage = function (){
+			if ($("#select-choice-1").val() == "Yes"){
+				$.mobile.changePage( "#pageBroken", { transition: "pop"} );
+			}
+			else if ($("#select-choice-1").val() == "No"){
+				$.mobile.changePage( "#pageNotBroken", { transition: "pop"} );
+			}
+		}
+	</script>
+
+</head> 
+<body>  
+
+<div data-role="page" id="pageGlass">
+
+	<div data-role="header">
+		<h1>Glass</h1>
+	</div>
+
+	<label for="select-choice-1" class="select"></label>
+		<select name="select-choice-1" id="select-choice-1" data-native-menu="false">
+			<option>Is the glass broken?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value= "Submit" data-theme="b" onclick="changeGlassPage()">
+		</select>
+
+	
+
+	</div>
+
+</div>
+
+<div data-role="page" id="pageBroken">
+
+	<div data-role="header">
+		<h1>Glass</h1>
+	</div>
+
+	<div data-role="content">
+		<p> Throw away any broken glass in the trash </p>
+		<a href="#pageGlass">Link to glass</a> 
+	</div>
+	
+</div>
+
+<div data-role="page" id="pageNotBroken">
+
+	<div data-role="header">
+		<h1>Glass</h1>
+	</div>
+
+	<div data-role="content">
+		<p> Recycle unbroken glass, unless it is from a mirror, window, or lightbulb </p>
+		<a href="#pageGlass">Link to glass</a> 
+	</div>
+	
+</div>
+
+
+</body>
+</html>
