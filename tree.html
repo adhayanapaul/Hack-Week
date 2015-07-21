@@ -10,35 +10,35 @@
 	<script>
 	
 		var changeGlassPage = function (){
-			if ($("#select-choice-1").val() == "Yes"){
+			if ($("#select-choice-1g").val() == "Yes"){
 				$.mobile.changePage( "#pageBroken", { transition: "pop"} );
 			}
-			else if ($("#select-choice-1").val() == "No"){
+			else if ($("#select-choice-1g").val() == "No"){
 				$.mobile.changePage( "#pageNotBroken", { transition: "pop"} );
 			}
 		}
 
 		var changePlasticPage = function (){
-			if ($("#select-choice-2").val() == "Yes"){
+			if ($("#select-choice-2p").val() == "Yes"){
 				$.mobile.changePage( "#pagePlasticComp", { transition: "pop"} );
 			}
-			else if ($("#select-choice-2").val() == "No"){
+			else if ($("#select-choice-2p").val() == "No"){
 				$.mobile.changePage( "#pagePlasticRec", { transition: "pop"} );
 			}
 		}
 
 		var changePlasticRecPage = function (){
-			if ($("#select-choice-3").val() == "Yes"){
+			if ($("#select-choice-3p").val() == "Yes"){
 				$.mobile.changePage( "#pagePlasticYes", { transition: "pop"} );
 			}
-			else if ($("#select-choice-3").val() == "No"){
+			else if ($("#select-choice-3p").val() == "No"){
 				$.mobile.changePage( "#pagePlasticNo", { transition: "pop"} );
 			}
 		}
 	</script>
 
 </head> 
-<body>  
+<body>   
 
 <div data-role="page" id="pageGlass">
 
@@ -46,8 +46,8 @@
 		<h1>Glass</h1>
 	</div>
 
-	<label for="select-choice-1" class="select"></label>
-		<select name="select-choice-1" id="select-choice-1" data-native-menu="false">
+	<label for="select-choice-1g" class="select"></label>
+		<select name="select-choice-1g" id="select-choice-1g" data-native-menu="false">
 			<option>Is the glass broken?</option>
 		   <option value="Yes">Yes</option>
 		   <option value="No">No</option>
@@ -97,7 +97,7 @@
 	</div>
 
 	<label for="select-choice-1" class="select"></label>
-		<select name="select-choice-1" id="select-choice-2" data-native-menu="false">
+		<select name="select-choice-1" id="select-choice-2p" data-native-menu="false">
 			<option>Does it say that the plastic is compostable?</option>
 		   <option value="Yes">Yes</option>
 		   <option value="No">No</option>
@@ -130,7 +130,7 @@
 
 	<div data-role="content">
 		<label for="select-choice-1" class="select"></label>
-		<select name="select-choice-1" id="select-choice-3" data-native-menu="false">
+		<select name="select-choice-1" id="select-choice-3p" data-native-menu="false">
 		   <option>Is there a recycling symbol on the plastic?</option>
 		   <option value="Yes">Yes</option>
 		   <option value="No">No</option>
