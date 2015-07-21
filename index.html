@@ -13,10 +13,9 @@
 <script>
 	var PageToMaterial = function(){
 		if ($("#select-choice-1").val() == "Metals"){
-			alert("I'm hacking your code!!11!11");
-			$.mobile.changePage( "#MetalCan", { transition: "slideup", changeHash: true });
+			$.mobile.changePage( "#MetalCan", { transition: "pop", changeHash: true });
 		}else{
-			$.mobile.changePage( "#Select A Material", { transition: "slideup", changeHash: true });
+			$.mobile.changePage( "#Select A Material", { transition: "pop", changeHash: true });
 		}
 	}
 </script>
@@ -24,10 +23,20 @@
 
 <script>
 	var CanToDestiny = function(){
-		if ($("#select-choice-1").val() == "Yes"){
-			$.mobile.changePage( "#MetalRecycle", { transition: "slideup", changeHash: true });
+		if ($("#select-choice-2").val() == "Yes"){
+			$.mobile.changePage( "#MetalRecycle", { transition: "pop", changeHash: true });
 		}else{
-			$.mobile.changePage( "#MetalFoil", { transition: "slideup", changeHash: true });
+			$.mobile.changePage( "#MetalFoil", { transition: "pop", changeHash: true });
+		}
+	}
+</script>
+
+<script>
+	var FoilToDestiny = function(){
+		if ($("#select-choice-3").val() == "Yes"){
+			$.mobile.changePage( "#MetalTrash", { transition: "pop", changeHash: true });
+		}else{
+			$.mobile.changePage( "#MetalScrap", { transition: "pop", changeHash: true });
 		}
 	}
 </script>
@@ -38,40 +47,36 @@
 		<h1>My Title</h1>
 	</div><!-- /header -->
 
-	<div data-role="content">	
-		<p>Select a Material</p>		
-	</div><!-- /content -->
-
-	<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
-	   <option value="Plastic">Plastic</option>
-	   <option value="Paper/Cardboard">Paper/Cardboard</option>
-	   <option value="Styrofoam">Styrofoam</option>
-	   <option value="Glass">Glass</option>
-	   <option value="Metals">Metals</option>
-	   <option value="Food">Food</option>
-	   <input type="button" value="Submit" data-theme="b" onClick="PageToMaterial()">
-	</select>
+	<label for="select-choice-1" class="select"></label>
+		<select name="select-choice-1" id="select-choice-1" data-native-menu="false">
+			<option >Select A Material</option>
+		   <option value="Plastic">Plastic</option>
+		   <option value="Paper/Cardboard">Paper/Cardboard</option>
+		   <option value="Styrofoam">Styrofoam</option>
+		   <option value="Glass">Glass</option>
+		   <option value="Metals">Metals</option>
+		   <option value="Food">Food</option>
+		   <input type="button" value="Submit" data-theme="b" onClick="PageToMaterial()">
+		</select>
 </div><!-- /page -->
 
 
-<div data-role="pageMetals" id="MetalCan">
+<div data-role="page" id="MetalCan">
 	<div data-role="header">
 		<h1>Metals</h1>
 	</div><!-- /header -->
 
-	<div data-role="content">	
-		<p>Is it a bottle or can?</p>		
-	</div><!-- /content -->
-
-	<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
-	   <option value="Yes">Yes</option>
-	   <option value="No">No</option>
-	   <input type="button" value="Submit" data-theme="b" onClick="changePicture()">
-	</select>
+	<label for="select-choice-2" class="select"></label>
+		<select name="select-choice-2" id="select-choice-2" data-native-menu="false">
+			<option>Is it a Bottle or a Can?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value="Submit" data-theme="b" onClick="CanToDestiny()">
+		</select>
 </div><!-- /page -->
 
 
-<div data-role="pageMetals" id="MetalRecycle">
+<div data-role="page" id="MetalRecycle">
 	<div data-role="header">
 		<h1>Metals</h1>
 	</div><!-- /header -->
@@ -82,23 +87,22 @@
 </div><!-- /page -->
 
 
-<div data-role="pageMetals" id="MetalFoil">
+<div data-role="page" id="MetalFoil">
 	<div data-role="header">
 		<h1>Metals</h1>
 	</div><!-- /header -->
 
-	<div data-role="content">	
-		<p>Is it foil?</p>		
-	</div><!-- /content -->
-
-	<select name="select-choice-0" id="select-choice-1" data-native-menu="false">
-	   <option value="Yes">Yes</option>
-	   <option value="No">No</option>
-	   <input type="button" value="Submit" data-theme="b" onClick="changePicture()">
-	</select>
+	<label for="select-choice-3" class="select"></label>
+		<select name="select-choice-3" id="select-choice-3" data-native-menu="false">
+			<option>Is it Foil?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value="Submit" data-theme="b" onClick="FoilToDestiny()">
+		</select>
 </div><!-- /page -->
 
-<div data-role="pageMetals">
+
+<div data-role="page" id="MetalTrash">
 	<div data-role="header">
 		<h1>Metals</h1>
 	</div><!-- /header -->
@@ -108,7 +112,8 @@
 	</div><!-- /content -->
 </div><!-- /page -->
 
-<div data-role="pageMetals">
+
+<div data-role="page" id="MetalScrap">
 	<div data-role="header">
 		<h1>Metals</h1>
 	</div><!-- /header -->
@@ -117,6 +122,7 @@
 		<p>To the scrap metal center!</p>		
 	</div><!-- /content -->
 </div><!-- /page -->
+
 
 </body>
 </html>
