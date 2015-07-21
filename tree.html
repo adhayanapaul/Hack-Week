@@ -17,6 +17,24 @@
 				$.mobile.changePage( "#pageNotBroken", { transition: "pop"} );
 			}
 		}
+
+		var changePlasticPage = function (){
+			if ($("#select-choice-2").val() == "Yes"){
+				$.mobile.changePage( "#pagePlasticComp", { transition: "pop"} );
+			}
+			else if ($("#select-choice-2").val() == "No"){
+				$.mobile.changePage( "#pagePlasticRec", { transition: "pop"} );
+			}
+		}
+
+		var changePlasticRecPage = function (){
+			if ($("#select-choice-3").val() == "Yes"){
+				$.mobile.changePage( "#pagePlasticYes", { transition: "pop"} );
+			}
+			else if ($("#select-choice-3").val() == "No"){
+				$.mobile.changePage( "#pagePlasticNo", { transition: "pop"} );
+			}
+		}
 	</script>
 
 </head> 
@@ -36,7 +54,7 @@
 		   <input type="button" value= "Submit" data-theme="b" onclick="changeGlassPage()">
 		</select>
 
-	
+	<a href = "#pagePlastic" > Link to Plastic </a>
 
 	</div>
 
@@ -64,6 +82,86 @@
 	<div data-role="content">
 		<p> Recycle unbroken glass, unless it is from a mirror, window, or lightbulb </p>
 		<a href="#pageGlass">Link to glass</a> 
+	</div>
+	
+</div>
+
+
+
+
+<!-- Plastic Code -->
+<div data-role="page" id="pagePlastic">
+
+	<div data-role="header">
+		<h1>Plastic</h1>
+	</div>
+
+	<label for="select-choice-1" class="select"></label>
+		<select name="select-choice-1" id="select-choice-2" data-native-menu="false">
+			<option>Does it say that the plastic is compostable?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value= "Submit" data-theme="b" onclick="changePlasticPage()">
+		</select>
+
+	</div>
+
+</div>
+
+
+<div data-role="page" id="pagePlasticComp">
+
+	<div data-role="header">
+		<h1>Plastic</h1>
+	</div>
+
+	<div data-role="content">
+		<p> If plastic is labeled "Compostable," put in in the compost bin! </p>
+		<a href="#pagePlastic">Link to plastic</a> 
+	</div>
+	
+</div>
+
+<div data-role="page" id="pagePlasticRec">
+
+	<div data-role="header">
+		<h1>Plastic</h1>
+	</div>
+
+	<div data-role="content">
+		<label for="select-choice-1" class="select"></label>
+		<select name="select-choice-1" id="select-choice-3" data-native-menu="false">
+		   <option>Is there a recycling symbol on the plastic?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value= "Submit" data-theme="b" onclick="changePlasticRecPage()">
+		</select>
+	</div>
+	
+</div>
+
+<div data-role="page" id="pagePlasticYes">
+
+	<div data-role="header">
+		<h1>Plastic</h1>
+	</div>
+
+	<div data-role="content">
+		<p> Recycle! </p>
+		<a href="#pagePlastic">Link to plastic</a> 
+	</div>
+	
+</div>
+
+<div data-role="page" id="pagePlasticNo">
+
+	<div data-role="header">
+		<h1>Plastic</h1>
+	</div>
+
+	<div data-role="content">
+		<p> Trash! </p>
+		<a href="#pagePlastic">Link to plastic</a> 
 	</div>
 	
 </div>
