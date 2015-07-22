@@ -1,5 +1,21 @@
 var points = 0;
 
+var addRecycle = function(){
+	points = points +1;
+	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
+	alert(points);
+}
+
+var addCompost = function(){
+	points = points + 2;
+	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
+	alert(points);
+}
+
+var addTrash = function(){
+	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
+	alert(points);
+}
 
 var PageToMaterial = function(){
 		if ($("#select-choice-1m").val() == "Metals"){

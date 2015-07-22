@@ -11,6 +11,18 @@
 </head> 
 <body> 
 
+<div data-role="page" id="menu">
+	<center>
+	<p> this is the menu </p>
+	<a href="#searchPage">Throw away an item!</a>
+	<img src="tree1.jpg" alt = "seed">
+	<img src="tree2.jpg" alt = "sapling">
+	</center>
+
+</div>	
+
+
+
 
 <div data-role="page" id="searchPage">
 			<div data-role="header">
@@ -39,17 +51,28 @@
 		</div><!-- /page -->
 
 		<div data-role="page" id= "r"> 
+			<center>
 			<p> Recycle! </p>
+			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="addRecycle()">
+			</center>	
+
 		</div>
 
 		<div data-role="page" id="t"> 
+			<center>
 			<p> Trash! </p>
+			<p> Sorry, you're hurting the environment. Your tree will suffer.</p>
+			<input type="button" value="Go to menu" data-inline="true" data-theme="a" onclick="addTrash()">
+			</center>
 		</div>
 
 		<div data-role="page" id="c"> 
+			<center>
 			<p> COMPOST!!!!! </p>
+			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="addCompost()">
+			</center>	
 		</div>
-		
+
 		<div data-role="page" id= "anya"> 
 			<img src = "anya.png" align="center"> </img>
 			<img src = "arrow1.jpg" align="center"> </img>
