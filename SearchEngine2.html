@@ -10,11 +10,6 @@
 	</head>
 
 	<script>
-		var changePicture= function(){
-			$("#select-choice-1").val()
-			var filename = $("#select-choice-1").val() + ".jpg"
-			$("#pic").attr('src',filename);
-		}
 	</script>
 
 
@@ -28,24 +23,29 @@
 		
 
 		<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search fruits..." data-inset="true">
-			<li><a href="#pageCompost">Apple</a></li>
-			<li><a href="#">Banana</a></li>
-			<li><a href="#">Cherry</a></li>
-			<li><a href="#">Cranberry</a></li>
-			<li><a href="#">Grape</a></li>
-			<li><a href="#">Orange</a></li>
+			<li><a href="#c">Food</a></li>
+			<li><a href="#r">Aluminum Can</a></li>
+			<li><a href="#r">Aluminum Foil</a></li>
+			<li><a href="#r">Plastic Bottle</a></li>
+			<li><a href="#r">Paper</a></li>
+			<li><a href="#t">Cling Wrap</a></li>
+			<li><a href="#t">Ziploc Bags</a></li>
+			<li><a href="#c">Eggshells</a></li>
+			<li><a href="#r">Newspaper</a></li>
 		</ul>
 
 		</div><!-- /page -->
 
-		<div data-role="page" id= "pageRecycle"> 
+		<div data-role="page" id= "r"> 
+			<p> Recycle! </p>
 		</div>
 
-		<div data-role="page" id="pageTrash"> 
+		<div data-role="page" id="t"> 
+			<p> Trash! </p>
 		</div>
 
-		<div data-role="page" id="pageCompost"> 
-			<p> COMMPOST UR PAPPLE </p>
+		<div data-role="page" id="c"> 
+			<p> COMPOST!!!!! </p>
 		</div>
 
 	</body>
