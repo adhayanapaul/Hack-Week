@@ -35,6 +35,11 @@ var searchpage = function(){
 	$.mobile.changePage( "#searchPage", { transition: "pop", changeHash: true });
 }
 
+var carbon = function(){
+	$.mobile.changePage( "#carbon", { transition: "pop", changeHash: true });
+
+}
+
 var PageToMaterial = function(){
 		if ($("#select-choice-1m").val() == "Metals"){
 			$.mobile.changePage( "#MetalCan", { transition: "pop", changeHash: true });
