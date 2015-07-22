@@ -3,10 +3,10 @@
 <head> 
 	<title>My Page</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" type="text/css" href="myStyles.css">
-	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head> 
 <body> 
 
@@ -84,6 +84,59 @@
 
 }
 </script>
+
+
+
+<div data-role="page" id="searchPage">
+			<div data-role="header">
+				<h1>Rise Against Pollution</h1>
+			</div><!-- /header -->
+
+			<div data-role="content">	</div>
+		
+
+		<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search item..." data-inset="true">
+			<li><a href="#c">Food</a></li>
+			<li><a href="#r">Aluminum Can</a></li>
+			<li><a href="#r">Aluminum Foil</a></li>
+			<li><a href="#r">Plastic Bottle</a></li>
+			<li><a href="#r">Paper</a></li>
+			<li><a href="#t">Cling Wrap</a></li>
+			<li><a href="#t">Ziploc Bags</a></li>
+			<li><a href="#christy">Christy</a><li>
+			<li><a href="#c">Eggshells</a></li>
+			<li><a href="#anya">Anya</a></li>
+			<li><a href="#r">Newspaper</a></li>
+		</ul>
+		
+		<a href="#Select a Material"> Click here if your item is not listed! </a>
+
+		</div><!-- /page -->
+
+		<div data-role="page" id= "r"> 
+			<p> Recycle! </p>
+		</div>
+
+		<div data-role="page" id= "anya"> 
+			<img src = "anya.png" align="center"> </img>
+			<img src = "arrow1.jpg" align="center"> </img>
+			<img src = "Recycling.jpg" align="center"> </img>
+		</div>
+
+		<div data-role="page" id= "christy"> 
+			<img src = "Christy.png" align="center"> </img>
+			<img src = "arrow1.jpg" align="center"> </img>
+			<img src = "compost.jpg" align="center"> </img>
+		</div>
+
+		<div data-role="page" id="t"> 
+			<p> Trash! </p>
+		</div>
+
+		<div data-role="page" id="c"> 
+			<p> COMPOST!!!!! </p>
+		</div>
+
 
 
 
