@@ -3,18 +3,36 @@ var points = 0;
 var addRecycle = function(){
 	points = points +1;
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
+	grow();
 	alert(points);
 }
 
 var addCompost = function(){
 	points = points + 2;
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
+	grow();
 	alert(points);
 }
 
 var addTrash = function(){
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
+	grow();
 	alert(points);
+}
+
+var grow = function(){
+	if (points <= 3){
+		var filename = "tree1.jpg";
+		$("#pot").attr('src',filename);
+	}
+	else if (points >3){
+		var filename = "tree2.jpg";
+		$("#pot").attr('src',filename);
+	}
+}
+
+var searchpage = function(){
+	$.mobile.changePage( "#searchPage", { transition: "pop", changeHash: true });
 }
 
 var PageToMaterial = function(){
