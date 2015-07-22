@@ -11,32 +11,38 @@
 </head> 
 <body> 
 
+<!-- menu without pretty-->
 <div data-role="page" id="menu">
 	<center>
-	<p> Menu </p>
-	<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="searchpage()">
-	<input type="button" value="Carbon Emissions!" data-inline="true" data-theme="a" onclick="carbon()">
-	<div>
-		<img id = "pot" src="tree0.png">
-	</div>
-
+		<p> Menu </p>
+		<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="searchpage()">
+		<input type="button" value="Carbon Emissions!" data-inline="true" data-theme="a" onclick="carbon()">
+		<div>
+			<img id = "pot" src="tree0.png">
+		</div>
 	</center>
-
 </div>	
+
+
+
+
+<!-- Carbon Page -->
 
 <div data-role="page" id="carbon">
 	<p> Hello, tree killers.</p>
 </div>
 
 
+
+
+<!-- Search Page  -->
+
 <div data-role="page" id="searchPage">
 			<div data-role="header">
 				<h1>Rise Against Pollution</h1>
-			</div><!-- /header -->
-
-			<div data-role="content">	</div>
-		
-
+			</div>
+			<div data-role="content">	
+			</div>
 		<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search item..." data-inset="true">
 			<li><a href="#c">Food</a></li>
 			<li><a href="#r">Aluminum Can</a></li>
@@ -50,10 +56,13 @@
 			<li><a href="#anya">Anya</a></li>
 			<li><a href="#r">Newspaper</a></li>
 		</ul>
-		
 		<a href="#Select a Material"> Click here if your item is not listed! </a>
+		</div>
 
-		</div><!-- /page -->
+
+
+
+<!-- Define what to do with material / end pages -->
 
 		<div data-role="page" id= "r"> 
 			<center>
@@ -92,10 +101,16 @@
 
 
 
+
+
+
+
+<!-- Tree -->
+
 <div data-role="page" id="Select a Material">
 	<div data-role="header">
 		<h1>My Title</h1>
-	</div><!-- /header -->
+	</div>
 
 	<label for="select-choice-1m" class="select"></label>
 		<select name="select-choice-1m" id="select-choice-1m" data-native-menu="false">
@@ -108,8 +123,7 @@
 		   <option value="Food">Food</option>
 		   <input type="button" value="Submit" data-theme="b" onClick="PageToMaterial()">
 		</select>
-</div><!-- /page -->
-
+</div>
 
 <!-- Plastic Code -->
 <div data-role="page" id="pagePlastic">
@@ -125,11 +139,8 @@
 		   <option value="No">No</option>
 		   <input type="button" value= "Submit" data-theme="b" onclick="changePlasticPage()">
 		</select>
-
 	</div>
-
 </div>
-
 
 <div data-role="page" id="pagePlasticRec">
 
@@ -186,8 +197,6 @@
 
 </div>
 
-
-
 <div data-role="page" id="pageNotBroken">
 
 	<div data-role="header">
@@ -204,7 +213,7 @@
 <div data-role="page" id="MetalCan">
 	<div data-role="header">
 		<h1>Metals</h1>
-	</div><!-- /header -->
+	</div>
 
 	<label for="select-choice-2m" class="select"></label>
 		<select name="select-choice-2m" id="select-choice-2m" data-native-menu="false">
@@ -213,14 +222,12 @@
 		   <option value="No">No</option>
 		   <input type="button" value="Submit" data-theme="b" onClick="CanToDestiny()">
 		</select>
-</div><!-- /page -->
-
-
+</div>
 
 <div data-role="page" id="MetalFoil">
 	<div data-role="header">
 		<h1>Metals</h1>
-	</div><!-- /header -->
+	</div>
 
 	<label for="select-choice-3m" class="select"></label>
 		<select name="select-choice-3m" id="select-choice-3m" data-native-menu="false">
@@ -229,26 +236,17 @@
 		   <option value="No">No</option>
 		   <input type="button" value="Submit" data-theme="b" onClick="FoilToDestiny()">
 		</select>
-</div><!-- /page -->
-
-
-
-
+</div>
 
 <div data-role="page" id="MetalScrap">
 	<div data-role="header">
 		<h1>Metals</h1>
-	</div><!-- /header -->
+	</div>
 
 	<div data-role="content">	
 		<p>To the scrap metal center!</p>		
-	</div><!-- /content -->
-</div><!-- /page -->
-
-
-
-
-
+	</div>
+</div>
 
 
 </body>
