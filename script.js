@@ -1,32 +1,70 @@
-var itemList = [
-					{"item": "plastic bottle"},
-					{"item": "glass bottle"},
-					{"item": "paper"},
-					{"item": "person"},
-					{"item": "flower"} //first object
-				];
-
-
-/*var songslist = [
-	{"song":"Satellite","lyrics":"You can't feel the heat until you hold your hand over the flame You have to cross the line just to remember where it lays"},
-	{"song":"Paper Wings","lyrics":"One last thing I beg you please just before you go"},
-	{"song":"Ready to Fall","lyrics":"Hold on slow down again from the top now and tell me everything"}
-	];
-window.onload = function(){
-	console.log(JSON.stringify(contactlist));
-	for(var i=0;i < contactlist.length;i++){
-		var songs=songslist[i];
-		displayContact(songs);
+var PageToMaterial = function(){
+		if ($("#select-choice-1m").val() == "Metals"){
+			$.mobile.changePage( "#MetalCan", { transition: "pop", changeHash: true });
+		}else if ($("#select-choice-1m").val() == "Plastic"){
+			$.mobile.changePage( "#pagePlastic", { transition: "pop", changeHash: true });
+		}else if ($("#select-choice-1m").val() == "Glass"){
+			$.mobile.changePage( "#pageGlass", { transition: "pop", changeHash: true });
+		}else if ($("#select-choice-1m").val() == "Styrofoam"){
+			$.mobile.changePage( "#t", { transition: "pop", changeHash: true });
+		}else if ($("#select-choice-1m").val() == "Food"){
+			$.mobile.changePage( "#c", { transition: "pop", changeHash: true });
+		}else if ($("#select-choice-1m").val() == "Paper/Cardboard"){
+			$.mobile.changePage( "#paper", { transition: "pop", changeHash: true });
+		}else{
+			$.mobile.changePage( "#Select A Material", { transition: "pop", changeHash: true });
+		}
 	}
-	
-};
-var displayContact = function(songs){
-	var contactString = "Name: " + songs.song + " Number: " + songs.lyrics;
-	var htmlString = '<div data-role="collapsible">\
-						<h3> '+ songs.song +' </h3>\
-						<p>'+ songs.lyrics +'</p>\
-					</div>';
-	$('#songHolder').append(htmlString);
-	$("#songHolder").collapsibleset("refresh");
-	console.log(contactString);
-};*/
+
+	var CanToDestiny = function(){
+		if ($("#select-choice-2m").val() == "Yes"){
+			$.mobile.changePage( "#r", { transition: "pop", changeHash: true });
+		}else{
+			$.mobile.changePage( "#MetalFoil", { transition: "pop", changeHash: true });
+		}
+	}
+
+	var FoilToDestiny = function(){
+		if ($("#select-choice-3m").val() == "Yes"){
+			$.mobile.changePage( "#t", { transition: "pop", changeHash: true });
+		}else{
+			$.mobile.changePage( "#MetalScrap", { transition: "pop", changeHash: true });
+		}
+	}
+
+	var changeGlassPage = function (){
+			if ($("#select-choice-1g").val() == "Yes"){
+				$.mobile.changePage( "#t", { transition: "pop"} );
+			}
+			else if ($("#select-choice-1g").val() == "No"){
+				$.mobile.changePage( "#pageNotBroken", { transition: "pop"} );
+			}
+		}
+
+	var changePlasticPage = function (){
+		if ($("#select-choice-2p").val() == "Yes"){
+			$.mobile.changePage( "#c", { transition: "pop"} );
+		}
+		else if ($("#select-choice-2p").val() == "No"){
+			$.mobile.changePage( "#r", { transition: "pop"} );
+		}
+	}
+
+	var changePlasticRecPage = function (){
+		if ($("#select-choice-3p").val() == "Yes"){
+			$.mobile.changePage( "#r", { transition: "pop"} );
+		}
+		else if ($("#select-choice-3p").val() == "No"){
+			$.mobile.changePage( "#t", { transition: "pop"} );
+		}
+	}
+
+	var changePaper =function(){
+	if ($("#select-choice-1c").val()=="yes"){
+		$.mobile.changePage( "#c", { transition: "pop"} );
+	}
+	else if ($("#select-choice-1c").val()=="no"){
+		$.mobile.changePage( "#r", { transition: "pop"} );
+	}
+
+}
