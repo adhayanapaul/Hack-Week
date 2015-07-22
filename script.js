@@ -1,3 +1,6 @@
+var points = 0;
+
+
 var PageToMaterial = function(){
 		if ($("#select-choice-1m").val() == "Metals"){
 			$.mobile.changePage( "#MetalCan", { transition: "pop", changeHash: true });
@@ -15,7 +18,7 @@ var PageToMaterial = function(){
 			$.mobile.changePage( "#Select A Material", { transition: "pop", changeHash: true });
 		}
 	}
-
+  
 	var CanToDestiny = function(){
 		if ($("#select-choice-2m").val() == "Yes"){
 			$.mobile.changePage( "#r", { transition: "pop", changeHash: true });
