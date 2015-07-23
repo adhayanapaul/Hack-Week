@@ -38,6 +38,8 @@ var grow = function(){
 
 var menuReturn = function(){
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });	
+	$(".gallons").empty();
+	$(".kg").empty();
 }
 
 
