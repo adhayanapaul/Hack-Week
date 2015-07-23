@@ -1,6 +1,10 @@
 var points = 0;
 var gall=0;
 var kg = 0; 
+
+
+
+//throw away functions
 var addRecycle = function(){
 	points = points +1;
 	grow();
@@ -14,11 +18,19 @@ var addCompost = function(){
 }
 
 var addTrash = function(){
-	menuReturn();
+	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
 }
 
+
+
+
+//grow function
 var grow = function(){
-	if (points <= 3){
+	if (points <= 0){
+		var filename = "tree0.jpg";
+		$("#pot").attr('src',filename);
+	}
+	else if (points <= 3 && points>0){
 		var filename = "tree1.jpg";
 		$("#pot").attr('src',filename);
 	}
@@ -26,17 +38,18 @@ var grow = function(){
 		var filename = "tree2.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 0){
-		var filename = "tree0.jpg";
-		$("#pot").attr('src',filename);
-	}
 }
 
+
+
+
+//getting to various pages
 var menuReturn = function(){
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });	
 	$(".gallons").empty();
 	$(".kg").empty();
 	$("#points").empty();
+	grow();
 	$("#points").append("Points: "+ points);
 }
 
@@ -68,7 +81,6 @@ var calculations = function(){
 	    $.mobile.changePage( "#footprintAvg", { transition: "pop", changeHash: true });
 	    var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
     	$(".gallons").append(gallonsString);
-	    //alert(points+" "+gall+" "+" "+ kg);
 	}
 	else if (kg>17){
 		$.mobile.changePage( "#footprintMore", { transition: "pop", changeHash: true });
@@ -77,7 +89,6 @@ var calculations = function(){
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Shame on you! >:(";
     	$(".kg").append(carbonString);
 		points=points-5;
-	    //alert(points+" "+gall+" "+" "+ kg);
 	}
 	else if (kg<8){
 		$.mobile.changePage( "#footprintLess", { transition: "pop", changeHash: true });
@@ -86,11 +97,13 @@ var calculations = function(){
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Good job! :D";
     	$(".kg").append(carbonString);
 		points=points+1;
-	    //alert(points+" "+gall+" "+" "+ kg);
 	}
 }
 
 
+
+
+//Tree functions
 var PageToMaterial = function(){
 		if ($("#select-choice-1m").val() == "Metals"){
 			$.mobile.changePage( "#MetalCan", { transition: "pop", changeHash: true });
