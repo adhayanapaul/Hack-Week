@@ -59,19 +59,32 @@ var calculations = function(){
     if (distance<=1.5){
     	$.mobile.changePage( "#footprintShort", { transition: "pop", changeHash: true });
     	points=points-4;
-    	//alert(points+" "+gall+" "+" "+ kg);
+    	var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
+    	$(".gallons").append(gallonsString);
+    	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2.";
+    	$(".kg").append(carbonString);
     }
     else if ((kg<=17)&&(kg>=8)){
 	    $.mobile.changePage( "#footprintAvg", { transition: "pop", changeHash: true });
+	    var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
+    	$(".gallons").append(gallonsString);
 	    //alert(points+" "+gall+" "+" "+ kg);
 	}
 	else if (kg>17){
 		$.mobile.changePage( "#footprintMore", { transition: "pop", changeHash: true });
+		var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
+    	$(".gallons").append(gallonsString);
+    	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Shame on you! >:(";
+    	$(".kg").append(carbonString);
 		points=points-5;
 	    //alert(points+" "+gall+" "+" "+ kg);
 	}
 	else if (kg<8){
 		$.mobile.changePage( "#footprintLess", { transition: "pop", changeHash: true });
+		var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
+    	$(".gallons").append(gallonsString);
+    	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Good job! :D";
+    	$(".kg").append(carbonString);
 		points=points+1;
 	    //alert(points+" "+gall+" "+" "+ kg);
 	}
