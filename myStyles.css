@@ -3,3 +3,14 @@
 	font-size:120%;
 	border:10px solid blue;
 }
+#points{
+	font-size: 150%;
+	font-style: oblique;
+	font-family: arial;
+	color:#990033;
+	color:green;
+	text-align: right;
+	position: absolute;
+    top:40px;
+    right: 150px;
+}

@@ -3,22 +3,18 @@ var gall=0;
 var kg = 0; 
 var addRecycle = function(){
 	points = points +1;
-	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
 	grow();
-	alert(points);
+	menuReturn();
 }
 
 var addCompost = function(){
 	points = points + 2;
-	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
 	grow();
-	alert(points);
+	menuReturn();
 }
 
 var addTrash = function(){
-	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
-	// grow();
-	alert(points);
+	menuReturn();
 }
 
 var grow = function(){
@@ -40,6 +36,8 @@ var menuReturn = function(){
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });	
 	$(".gallons").empty();
 	$(".kg").empty();
+	$("#points").empty();
+	$("#points").append("Points: "+ points);
 }
 
 
