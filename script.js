@@ -1,4 +1,6 @@
 var points = 0;
+var gall=0;
+var kg = 0;
 
 var addRecycle = function(){
 	points = points +1;
@@ -46,9 +48,18 @@ var calculations = function(){
     distance = document.getElementById("distance").value;
     var mpg;
     mpg = document.getElementById("mpg").value;
-    var calc=distance/mpg;
-    $.mobile.changePage( "#Footprint", { transition: "pop", changeHash: true });
-    alert(calc);
+    var gall =distance/mpg;
+    var kg = gall * 8.887
+    if (distance<=1){
+    	$.mobile.changePage( "#footprintShort", { transition: "pop", changeHash: true });
+    	points=points-4;
+    	alert(points+" "+gall+" "+" "+ kg);
+    }
+    else{
+	    $.mobile.changePage( "#footprintMain", { transition: "pop", changeHash: true });
+	    points=points-4;
+	    alert(points+" "+gall+" "+" "+ kg);
+	}
 }
 
 
