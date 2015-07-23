@@ -1,7 +1,6 @@
 var points = 0;
 var gall=0;
-var kg = 0;
-
+var kg = 0; 
 var addRecycle = function(){
 	points = points +1;
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
@@ -18,7 +17,7 @@ var addCompost = function(){
 
 var addTrash = function(){
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });
-	grow();
+	// grow();
 	alert(points);
 }
 
@@ -31,8 +30,15 @@ var grow = function(){
 		var filename = "tree2.jpg";
 		$("#pot").attr('src',filename);
 	}
+	else if (points <= 0){
+		var filename = "tree0.jpg";
+		$("#pot").attr('src',filename);
+	}
 }
 
+var menuReturn = function(){
+	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });	
+}
 
 
 var searchpage = function(){
@@ -49,16 +55,25 @@ var calculations = function(){
     var mpg;
     mpg = document.getElementById("mpg").value;
     var gall =distance/mpg;
-    var kg = gall * 8.887
-    if (distance<=1){
+    var kg = gall * 8.887;
+    if (distance<=1.5){
     	$.mobile.changePage( "#footprintShort", { transition: "pop", changeHash: true });
     	points=points-4;
-    	alert(points+" "+gall+" "+" "+ kg);
+    	//alert(points+" "+gall+" "+" "+ kg);
     }
-    else{
-	    $.mobile.changePage( "#footprintMain", { transition: "pop", changeHash: true });
-	    points=points-4;
-	    alert(points+" "+gall+" "+" "+ kg);
+    else if ((kg<=17)&&(kg>=8)){
+	    $.mobile.changePage( "#footprintAvg", { transition: "pop", changeHash: true });
+	    //alert(points+" "+gall+" "+" "+ kg);
+	}
+	else if (kg>17){
+		$.mobile.changePage( "#footprintMore", { transition: "pop", changeHash: true });
+		points=points-5;
+	    //alert(points+" "+gall+" "+" "+ kg);
+	}
+	else if (kg<8){
+		$.mobile.changePage( "#footprintLess", { transition: "pop", changeHash: true });
+		points=points+1;
+	    //alert(points+" "+gall+" "+" "+ kg);
 	}
 }
 
