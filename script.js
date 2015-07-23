@@ -47,6 +47,7 @@ var calculations = function(){
     var mpg;
     mpg = document.getElementById("mpg").value;
     var calc=distance/mpg;
+    $.mobile.changePage( "#Footprint", { transition: "pop", changeHash: true });
     alert(calc);
 }
 
