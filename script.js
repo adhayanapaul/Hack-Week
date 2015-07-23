@@ -31,14 +31,25 @@ var grow = function(){
 	}
 }
 
+
+
 var searchpage = function(){
 	$.mobile.changePage( "#searchPage", { transition: "pop", changeHash: true });
 }
 
 var carbon = function(){
 	$.mobile.changePage( "#carbon", { transition: "pop", changeHash: true });
-
 }
+
+var calculations = function(){
+	var distance;
+    distance = document.getElementById("distance").value;
+    var mpg;
+    mpg = document.getElementById("mpg").value;
+    var calc=distance/mpg;
+    alert(calc);
+}
+
 
 var PageToMaterial = function(){
 		if ($("#select-choice-1m").val() == "Metals"){
