@@ -10,9 +10,7 @@
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="maps.js"> </script>
 	<meta type="description" content="Find the distance between two places on the map and the shortest route."/>
-
-
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
 
 </head> 
@@ -20,9 +18,36 @@
 
 <!-- </head> -->
 
-<div data-role="page" id = "map">
+<!-- <div data-role="page" id = "map">
 
-<body bgcolor="#eeeeee">
+
+</div> -->
+
+<!-- menu without pretty-->
+<div data-role="page" id="menu">
+	<center>
+	</h1> Menu</h1>
+	<p> 
+		<div id = "points">	
+		</div>
+	</p>
+
+	<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="searchpage()">
+	<input type="button" value="Carbon Emissions!" data-inline="true" data-theme="a" onclick="carbon()">
+	<div>
+		<img id = "pot" src="tree0.jpg">
+	</div>
+	</center>
+</div>	
+
+
+
+
+<!-- Carbon Page -->
+
+<div data-role="page" id="carbon">
+	<center>
+	<body bgcolor="#eeeeee">
 	<div id="form" style="width:100%; height:20%">
 		<table align="center" valign="center">
 			<tr>
@@ -54,32 +79,8 @@
 	<center><div id="map_canvas" style="width:70%; height:54%"></div></center>
 
 </body>
-</div>
 
-<!-- menu without pretty-->
-<div data-role="page" id="menu">
-	<center>
-	</h1> Menu</h1>
-	<p> 
-		<div id = "points">	
-		</div>
-	</p>
-
-	<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="searchpage()">
-	<input type="button" value="Carbon Emissions!" data-inline="true" data-theme="a" onclick="carbon()">
-	<div>
-		<img id = "pot" src="tree0.jpg">
-	</div>
-	</center>
-</div>	
-
-
-
-
-<!-- Carbon Page -->
-
-<div data-role="page" id="carbon">
-	<center>
+<p> </p>
 	<form action="action_page.php">
 		Distance Traveled:<br>
 		<input type="number" name="distance" id="distance" value=>

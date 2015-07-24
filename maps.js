@@ -90,7 +90,7 @@ var location1;
 			{
 				directionsDisplay.setDirections(response);
 				distance = "The distance between the two points on the chosen route is: "+response.routes[0].legs[0].distance.text;
-				distance += "<br/>The aproximative driving time is: "+response.routes[0].legs[0].duration.text;
+				//distance += "<br/>The aproximative driving time is: "+response.routes[0].legs[0].duration.text;
 				document.getElementById("distance_road").innerHTML = distance;
 			}
 		});
@@ -142,7 +142,7 @@ var location1;
 		});
 
 		// add action events so the info windows will be shown when the marker is clicked
-		google.maps.event.addListener(marker1, 'click', function() {
+		google.maps.event.addListener(mrarker1, 'click', function() {
 			infowindow1.open(map,marker1);
 		});
 		google.maps.event.addListener(marker2, 'click', function() {
@@ -163,7 +163,7 @@ var location1;
 		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
 		var d = R * c;
 		
-		document.getElementById("distance_direct").innerHTML = "<br/>The distance between the two points (in a straight line) is: "+d;
+		//document.getElementById("distance_direct").innerHTML = "<br/>The distance between the two points (in a straight line) is: "+d;
 	}
 	
 	function toRad(deg) 
