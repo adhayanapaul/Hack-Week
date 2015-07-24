@@ -30,12 +30,28 @@ var grow = function(){
 		var filename = "tree0.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 3 && points>0){
+	else if (points <= 7 && points>0){
 		var filename = "tree1.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points >3){
+	else if (points <= 14 && points>7){
 		var filename = "tree2.jpg";
+		$("#pot").attr('src',filename);
+	}
+	else if (points <= 21 && points>14){
+		var filename = "tree3.jpg";
+		$("#pot").attr('src',filename);
+	}
+	else if (points <= 28 && points>21){
+		var filename = "tree4.jpg";
+		$("#pot").attr('src',filename);
+	}
+	else if (points <= 35 && points>28){
+		var filename = "tree5.jpg";
+		$("#pot").attr('src',filename);
+	}
+	else if (points >50 && points>35){
+		var filename = "tree6.jpg";
 		$("#pot").attr('src',filename);
 	}
 }
