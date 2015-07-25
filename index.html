@@ -14,7 +14,7 @@
 
 
 </head> 
-<body> 
+<body onload="start()"> 
 
 <!-- </head> -->
 
@@ -34,6 +34,7 @@
 
 	<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="searchpage()">
 	<input type="button" value="Carbon Emissions!" data-inline="true" data-theme="a" onclick="carbon()">
+	<input type="button" value="Refresh Points" data-inline="true" data-theme="a" onclick="refresh()">
 	<div>
 		<img id = "pot" src="tree0.jpg">
 	</div>
@@ -83,9 +84,9 @@
 <p> </p>
 	<form action="action_page.php">
 		Distance Traveled (miles):<br>
-		<input type="number" name="distance" id="distance" value=>
+		<input type="number" name="distance" id="distance" style="width: 300px" value=>
 		<br>MPG:<br>
-		<input type="number" name="mpg" id="mpg" value=>
+		<input type="number" name="mpg" id="mpg" style="width: 300px"value=>
 		<br><br>
 		<input type="submit" value="Submit" onclick="calculations()">
 	</form>

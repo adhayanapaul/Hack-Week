@@ -1,18 +1,32 @@
-var points = 0;
+
 var gall=0;
 var kg = 0; 
+
+var start = function(){
+	if (localStorage.getItem("points") == null){
+	localStorage.setItem("points", 0);
+	}
+	$("#points").append("Points: "+ parseInt(localStorage.getItem("points")));
+	grow();
+}
+
+var refresh = function(){
+	localStorage.setItem("points", 0);
+	$("#points").empty();
+	start();
+}
 
 
 
 //throw away functions
 var addRecycle = function(){
-	points = points +1;
+	localStorage.setItem("points", parseInt(localStorage.getItem("points")) + 1);
 	grow();
 	menuReturn();
 }
 
 var addCompost = function(){
-	points = points + 2;
+	localStorage.setItem("points", parseInt(localStorage.getItem("points")) + 2);
 	grow();
 	menuReturn();
 }
@@ -26,31 +40,31 @@ var addTrash = function(){
 
 //grow function
 var grow = function(){
-	if (points <= 0){
+	if (parseInt(localStorage.getItem("points")) <= 0){
 		var filename = "tree0.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 7 && points>0){
+	else if (parseInt(localStorage.getItem("points")) <= 7 && parseInt(localStorage.getItem("points"))>0){
 		var filename = "tree1.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 14 && points>7){
+	else if (parseInt(localStorage.getItem("points")) <= 14 && parseInt(localStorage.getItem("points"))>7){
 		var filename = "tree2.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 21 && points>14){
+	else if (parseInt(localStorage.getItem("points")) <= 21 && parseInt(localStorage.getItem("points"))>14){
 		var filename = "tree3.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 28 && points>21){
+	else if (parseInt(localStorage.getItem("points")) <= 28 && parseInt(localStorage.getItem("points"))>21){
 		var filename = "tree4.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 35 && points>28){
+	else if (parseInt(localStorage.getItem("points")) <= 35 && parseInt(localStorage.getItem("points"))>28){
 		var filename = "tree5.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points >50 && points>35){
+	else if (parseInt(localStorage.getItem("points")) >50 && parseInt(localStorage.getItem("points"))>35){
 		var filename = "tree6.jpg";
 		$("#pot").attr('src',filename);
 	}
@@ -66,7 +80,8 @@ var menuReturn = function(){
 	$(".kg").empty();
 	$("#points").empty();
 	grow();
-	$("#points").append("Points: "+ points);
+	$("#points").append("Points: "+ localStorage.getItem("points"));
+
 }
 
 
@@ -87,7 +102,7 @@ var calculations = function(){
     var kg = gall * 8.887;
     if (distance<=1.5){
     	$.mobile.changePage( "#footprintShort", { transition: "pop", changeHash: true });
-    	points=points-4;
+    	localStorage.setItem("points", parseInt(localStorage.getItem("points")) - 4);
     	var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
     	$(".gallons").append(gallonsString);
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2.";
@@ -104,7 +119,7 @@ var calculations = function(){
     	$(".gallons").append(gallonsString);
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Shame on you! >:(";
     	$(".kg").append(carbonString);
-		points=points-5;
+		localStorage.setItem("points", parseInt(localStorage.getItem("points")) - 5);;
 	}
 	else if (kg<8){
 		$.mobile.changePage( "#footprintLess", { transition: "pop", changeHash: true });
@@ -112,7 +127,7 @@ var calculations = function(){
     	$(".gallons").append(gallonsString);
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Good job! :D";
     	$(".kg").append(carbonString);
-		points=points+1;
+		localStorage.setItem("points", parseInt(localStorage.getItem("points")) + 1);;
 	}
 }
 
