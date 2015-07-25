@@ -12,10 +12,88 @@
 	<script>
 	var fireBaseUrl = 'https://crackling-inferno-726.firebaseio.com/';
 	var myDataRef = new Firebase(fireBaseUrl);
+
+	
+
+	function addItem(){
+			//I want toDo to be the key into all the information about this toDo item
+			var toDo= $('#Add').val();
+			//the next two lines create an empty box with the toDo as the key
+			var dataRefAddress = fireBaseUrl + "/" + toDo; //make dataref for new item
+			var itemDataRef = new Firebase(dataRefAddress);
+			//var item = {name: toDo, points: 0, comments : []}; //since comments is an empty array, it doesn't actually get get saved because of firebase rules. So we don't save comments as an empty array. We'll add them later.
+			var item = {name: toDo, points: 0};
+			//the line below saves the item object at the itemDataRef address, so the toDo is now the key to the item (like normal). The second argument to itemDataRef.set() is a function that will be called after the item has been saved. 
+			itemDataRef.set(item, alert("item saved with key" + toDo));
+			// the line below specifies a function that will be called whenever anything inside item is changed. I call it here because I'm giving instructions to the new itemDataRef I created. But the function inside won't be called until addComment(itemName, newcomment) is called. 
+			itemDataRef.on("child_changed", function(childSnapshot, prevChildSnapshot){
+				//when I add a comment, this happens because the comment child is of the item is saved.
+				console.log(childSnapshot.val());
+			})
+		};
+
+
+		myDataRef.on('child_added', function(snapshot) {
+			//this code executes for every item in database when the page loads and for each item pushed after that. That's because firebase guarantees the the callback function for myDataRef.on('child_added', callbackFunction) is executed for every item in the db when the page loads and for each item pushed after that.  
+			var listitem = snapshot.val(); //listitem is guaranteed to have same format as whatever was pushed in lin 23
+			//var name = snapshot.key();
+			console.log( JSON.stringify(listitem));
+			//var comments = snapshot.child("comments");
+			//console.log(comments);
+			//displayList(listitem.action);
+		});
+
+	
+
+
+		function displayList(toDo){
+			$('#List').append("<li>"+toDo+"</li>");
+			$('#Add').attr('value',"");
+		};
+
+		//to test this function out, call addComment(itemName, newComment) in the console. It should add the new comment to the item with itemName.
+		function addComment(itemName, newComment){
+			var dataRefAddress = fireBaseUrl + "/" + itemName;
+			var dataRef = new Firebase(dataRefAddress);
+			//I want the instructions inside to execute now, so I use 'once'
+			dataRef.once('value', function(snapshot){
+				console.log("snapshot in ad Comments" + JSON.stringify(snapshot.val()));
+				var oldData= snapshot.val();
+				var oldComments = oldData["comments"];
+				console.log(oldComments);
+				oldComments.push(newComment);
+				var updatedComments = oldComments;
+				var commentsRefAddress = dataRefAddress + "/comments";
+				var commentsRef = new Firebase(commentsRefAddress);
+				commentsRef.set(updatedComments, alert("comment added"));
+			})
+			
+		}
+
 	</script>
 
-
 </head>
+
+<body>
+	<div data role="page">
+		<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="addPoint()">
+
+		<div data-role="content">
+				<label for="Add">Add</label>
+				<input type="text" name="Add" id="Add" value="">
+				
+				<a data-role="button" data-icon="arrow-r" href="#page1" data-inline="true" data-iconpos="right" onclick="addItem()">Add to List</a> 
+				<br>
+		</div>
+
+		<!-- <label for="Add">Add</label>
+				<input type="text" name="Add" id="Add" value="">
+				
+				<a data-role="button" data-icon="arrow-r" href="#page1" data-inline="true" data-iconpos="right" onclick="addlist()">Username</a>  -->
+
+	</div>
+
+</body>
 
 	
 </html>
