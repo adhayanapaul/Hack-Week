@@ -1,13 +1,4 @@
-<html>
-<head>
-<title>Distance finder</title>
-<meta type="description" content="Find the distance between two places on the map and the shortest route."/>
-<script src = "script - Copy.js"> </script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script type="text/javascript">
-
-
-	var location1;
+var location1;
 	var location2;
 	
 	var address1;
@@ -101,9 +92,7 @@
 				distance = "The distance between the two points on the chosen route is: "+response.routes[0].legs[0].distance.text;
 				//distance += "<br/>The aproximative driving time is: "+response.routes[0].legs[0].duration.text;
 				document.getElementById("distance_road").innerHTML = distance;
-				
 			}
-			
 		});
 		
 		// show a line between the two points
@@ -181,42 +170,3 @@
 	{
 		return deg * Math.PI/180;
 	}
-</script>
-
-</head>
-
-<body bgcolor="#eeeeee">
-	<div id="form" style="width:100%; height:20%">
-		<table align="center" valign="center">
-			<tr>
-				<td colspan="7" align="center"><b>Find the distance between two locations</b></td>
-			</tr>
-			<tr>
-				<td colspan="7">&nbsp;</td>
-			</tr>
-			<tr>
-				<td>First address:</td>
-				<td>&nbsp;</td>
-				<td><input type="text" name="address1" id="address1" size="50"/></td>
-				<td>&nbsp;</td>
-				<td>Second address:</td>
-				<td>&nbsp;</td>
-				<td><input type="text" name="address2" id="address2" size="50"/></td>
-			</tr>
-			<tr>
-				<td colspan="7">&nbsp;</td>
-			</tr>
-			<tr>
-				<td colspan="7" align="center"><input type="button" value="Show" onclick="initialize();"/></td>
-			</tr>
-			<tr>
-				<td colspan="7" align="center"><input type="button" value="Input this distance" data-inline="true" data-theme="a" onclick="carbon()"></td>
-			</tr>	
-		</table>
-	</div>
-	<center><div style="width:100%; height:10%" id="distance_direct"></div></center>
-	<center><div style="width:100%; height:10%" id="distance_road"></div></center>
-	
-	<center><div id="map_canvas" style="width:70%; height:54%"></div></center>
-</body>
-</html>
