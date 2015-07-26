@@ -93,6 +93,14 @@ var carbon = function(){
 	$.mobile.changePage( "#carbon", { transition: "pop", changeHash: true });
 }
 
+var goToLogin = function(){
+	$.mobile.changePage( "#login", { transition: "pop", changeHash: true });
+}
+
+var goToCreate = function(){
+	$.mobile.changePage( "#create", { transition: "pop", changeHash: true });
+}
+
 var distance =function(){
 	window.open('file:///C:/Users/AKulikov/Documents/GitHub/Hack-Week/try.html')
 }
