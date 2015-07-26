@@ -76,7 +76,7 @@ var grow = function(){
 //getting to various pages
 var menuReturn = function(){
 	$.mobile.changePage( "#menu", { transition: "pop", changeHash: true });	
-	$(".gallons").empty();
+	$(".gallons").empty();+-
 	$(".kg").empty();
 	$("#points").empty();
 	grow();
@@ -208,4 +208,8 @@ var PageToMaterial = function(){
 		$.mobile.changePage( "#r", { transition: "pop"} );
 	}
 
+}
+
+var goBack =function(){
+	document.location.href = "file:///C:/Users/AKulikov/Documents/GitHub/Hack-Week/index%20-%20Copy.html#carbon";
 }
