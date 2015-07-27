@@ -5,14 +5,12 @@
 }
 #points{
 	font-size: 150%;
-	font-style: oblique;
-	font-family: arial;
-	color:#990033;
-	color:green;
+	font-family: 'Muli', cursive;
+	color:#000000;
 	text-align: right;
 	position: absolute;
-    top:40px;
-    right: 500px;
+    top:95px;
+    right: 441.5px;
 }
 #menu{
 	/*border: thick solid #EDF0A3;*/
@@ -51,7 +49,7 @@ h5{
 #growgreen{
 	font-family: 'Grand Hotel', cursive;
 	color:#119620;
-	font-size:500%;
+	font-size:550%;
 	text-shadow: 1px 1px #CCFF99
 }
 
@@ -109,3 +107,4 @@ body .ui-body-c{
     font-size:200%;
     color: #15BD47;
 }
+
