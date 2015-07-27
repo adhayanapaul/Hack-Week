@@ -82,3 +82,9 @@ body .ui-body-c{
     height: 10px !important;  
     line-height: 7px;
 }
+
+#back{
+	line-height: 2em;
+	position:relative;
+	top:100px;
+}
