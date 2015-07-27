@@ -107,7 +107,7 @@ var goToCreate = function(){
 }
 
 var distance =function(){
-	window.open('file:///C:/Users/AKulikov/Documents/GitHub/Hack-Week/try.html')
+	window.open('try.html')
 }
 
 var calculations = function(){
@@ -227,7 +227,7 @@ var PageToMaterial = function(){
 }
 
 var goBack =function(){
-	document.location.href = "file:///C:/Users/AKulikov/Documents/GitHub/Hack-Week/index%20-%20Copy.html#carbon";
+	document.location.href = "index%20-%20Copy.html#carbon";
 }
 
 
