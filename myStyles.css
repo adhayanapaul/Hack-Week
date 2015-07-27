@@ -27,7 +27,7 @@
 }
 
 #r{
-	color:blue;
+	color:#0095FF;
 	font-size:140%;
 }
 
@@ -44,6 +44,10 @@
 	font-size:140%;
 }
 
+h5{
+	font-family: 'Grand Hotel', cursive;
+	font-size:200%;
+}
 #growgreen{
 	font-family: 'Grand Hotel', cursive;
 	color:#119620;
