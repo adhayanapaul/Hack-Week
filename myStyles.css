@@ -58,8 +58,13 @@ br{
 	font-family: 'Muli', sans-serif;
 }
 
-* {
+/** {
     font-family: 'Muli', sans-serif; !important;
+}*/
+
+body .ui-body-c{
+    font-family: 'Muli', sans-serif;
+    font-size:200%;
 }
 
 .ui-header{
