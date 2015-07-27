@@ -4,87 +4,33 @@
 	<title>My Page</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="myStyles.css">
+	<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
 	<script src = "script - copy.js"> </script>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="maps.js"> </script>
 	<meta type="description" content="Find the distance between two places on the map and the shortest route."/>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
 	
 
 	<script type="text/javascript">
-	// Set the database to one that connects to the firebase online database
-	// ubase is the reference to the user
-	var database = new Firebase('https://grow-green.firebaseIO.com/');
-	var ubase = new Firebase('https//:grow-green.firebaseIO.com');
-	/**
-	 * @function login
-	 * Attempts to login the user into the databse by changing the reference in the ubase to that of name
-	 */	
-	var login = function(uname){
-		try{
-			ubase = database.child(document.getElementById('name').value);
-			//Go to the menu
-			menuReturn();
-		}
-		catch(err)
-		{
-			//Displays this alert if the user is unable to login, most likely due to a wrong username
-			alert(err);
-		}
-	}
-	/**
-	 * @function createUser 
-	 * Adds a new JSON tree to the database using newName as the key for the user
-	 * Calls login to set the user reference
-	 */
-	var createUser = function(){
-		var uname = document.getElementById('newName').value;
-		//Create a JSON tree that will be put into the database using  uname as the key
-		var json = { };
-		json[uname] = {points:0};
-		//Writes the JSON tree to the database
-		database.update(json);
-		//Logs the user in
-		ubase = database.child(document.getElementById('newName').value);
-		//Goes to menu
-		menuReturn();
-	}
-	/**
-	 * @function setPoints 
-	 * Changes the amount of points in the database of the selected user to @param p
-	 * @param p
-	 * The amount of points that the user should have
-	 */
-	var setPoints = function(p){
-		ubase.set({points:p});
-	}
-	/**
-	 * @function getPoints
-	 * Retrieves the amount of points that the user has in the database
-	 */
-	var getPoints = function(){
-		var p;
-		ubase.child('points').on('value', function(dataSnapshot){
-			p = dataSnapshot.val();
-		});
-		return p;
-	}
+	
 	</script>
 </head> 
-<body onload="start()"> 
+<body onload="start()" onload="loadLogin()"> 
 
 
 
 
-
+<!--> menu and login and create account pages<-->`
 
 <div data-role="page" id="createLogin">
 	<center>
 		<input type="button" value="Login" data-inline="true" data-theme="a" onclick="goToLogin()">
-		<input type="button" value="Creat Account" data-inline="true" data-theme="a" onclick="goToCreate()">
+		<input type="button" value="Creat Account" data-inline="true" data-theme="a" onclick="goToCreate()">	
 	</center>
 </div>
 <div data-role="page" id="create">

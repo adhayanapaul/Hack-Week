@@ -1,17 +1,16 @@
 
 var gall=0;
 var kg = 0; 
-
+var points = 0;
+var p = 0;
 var start = function(){
-	if (localStorage.getItem("points") == null){
-	localStorage.setItem("points", 0);
-	}
-	$("#points").append("Points: "+ parseInt(localStorage.getItem("points")));
+	points= 0;
+	$("#points").append("Points: "+ points);
 	grow();
 }
 
 var refresh = function(){
-	localStorage.setItem("points", 0);
+	points=0;
 	$("#points").empty();
 	start();
 }
@@ -20,13 +19,15 @@ var refresh = function(){
 
 //throw away functions
 var addRecycle = function(){
-	localStorage.setItem("points", parseInt(localStorage.getItem("points")) + 1);
+	points=points+1;
+	setPoints(points);
 	grow();
 	menuReturn();
 }
 
 var addCompost = function(){
-	localStorage.setItem("points", parseInt(localStorage.getItem("points")) + 2);
+	points=points+2;
+	setPoints(points);
 	grow();
 	menuReturn();
 }
@@ -40,31 +41,31 @@ var addTrash = function(){
 
 //grow function
 var grow = function(){
-	if (parseInt(localStorage.getItem("points")) <= 0){
+	if (points <= 0){
 		var filename = "tree0.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (parseInt(localStorage.getItem("points")) <= 7 && parseInt(localStorage.getItem("points"))>0){
+	else if (points <= 7 && points>0){
 		var filename = "tree1.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (parseInt(localStorage.getItem("points")) <= 14 && parseInt(localStorage.getItem("points"))>7){
+	else if (points<= 14 && points>7){
 		var filename = "tree2.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (parseInt(localStorage.getItem("points")) <= 21 && parseInt(localStorage.getItem("points"))>14){
+	else if (points <= 21 && points>14){
 		var filename = "tree3.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (parseInt(localStorage.getItem("points")) <= 28 && parseInt(localStorage.getItem("points"))>21){
+	else if (points <= 28 && points>21){
 		var filename = "tree4.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (parseInt(localStorage.getItem("points")) <= 35 && parseInt(localStorage.getItem("points"))>28){
+	else if (points <= 35 && points>28){
 		var filename = "tree5.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (parseInt(localStorage.getItem("points")) >50 && parseInt(localStorage.getItem("points"))>35){
+	else if (points >50 && points>35){
 		var filename = "tree6.jpg";
 		$("#pot").attr('src',filename);
 	}
@@ -80,7 +81,7 @@ var menuReturn = function(){
 	$(".kg").empty();
 	$("#points").empty();
 	grow();
-	$("#points").append("Points: "+ localStorage.getItem("points"));
+	$("#points").append("Points: "+ points);
 
 }
 
@@ -114,7 +115,8 @@ var calculations = function(){
     var kg = gall * 8.887;
     if (distance<=1.5){
     	$.mobile.changePage( "#footprintShort", { transition: "pop", changeHash: true });
-    	localStorage.setItem("points", parseInt(localStorage.getItem("points")) - 4);
+    	points=points- 4;
+    	setPoints(points);
     	var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
     	$(".gallons").append(gallonsString);
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2.";
@@ -131,7 +133,8 @@ var calculations = function(){
     	$(".gallons").append(gallonsString);
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Shame on you! >:(";
     	$(".kg").append(carbonString);
-		localStorage.setItem("points", parseInt(localStorage.getItem("points")) - 5);;
+		points=points- 5;
+		setPoints(points);
 	}
 	else if (kg<8){
 		$.mobile.changePage( "#footprintLess", { transition: "pop", changeHash: true });
@@ -139,7 +142,8 @@ var calculations = function(){
     	$(".gallons").append(gallonsString);
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Good job! :D";
     	$(".kg").append(carbonString);
-		localStorage.setItem("points", parseInt(localStorage.getItem("points")) + 1);;
+		points=points+1;
+		setPoints(points);
 	}
 }
 
@@ -221,3 +225,77 @@ var PageToMaterial = function(){
 var goBack =function(){
 	document.location.href = "file:///C:/Users/AKulikov/Documents/GitHub/Hack-Week/index%20-%20Copy.html#carbon";
 }
+
+
+
+// Set the database to one that connects to the firebase online database
+	// ubase is the reference to the user
+	var database = new Firebase('https://grow-green.firebaseIO.com/');
+	var ubase = new Firebase('https//:grow-green.firebaseIO.com');
+	/**
+	 * @function login
+	 * Attempts to login the user into the databse by changing the reference in the ubase to that of name
+	 */	
+
+	var login = function(uname){
+		try{
+			ubase = database.child(document.getElementById('name').value);
+			//Go to the menu
+			document.cookie="username=John Doe"
+			//alert(document.cookie);
+			getPoints();
+			window.setTimeout(function(){menuReturn();}, 200);
+		}
+		catch(err)
+		{
+			//Displays this alert if the user is unable to login, most likely due to a wrong username
+			alert(err);
+		}
+	}
+
+var loadLogin = function(){
+	if(document.cookie!=null)
+	{
+		ubase = database.child(document.cookie);
+	}
+}
+
+	/**
+	 * @function createUser 
+	 * Adds a new JSON tree to the database using newName as the key for the user
+	 * Calls login to set the user reference
+	 */
+	var createUser = function(){
+		var uname = document.getElementById('newName').value;
+		//Create a JSON tree that will be put into the database using  uname as the key
+		var json = { };
+		json[uname] = {points:0};
+		//Writes the JSON tree to the database
+		database.update(json);
+		//Logs the user in
+		ubase = database.child(document.getElementById('newName').value);
+		//Goes to menu
+		menuReturn();
+	}
+	/**
+	 * @function setPoints 
+	 * Changes the amount of points in the database of the selected user to @param p
+	 * @param p
+	 * The amount of points that the user should have
+	 */
+	var setPoints = function(p){
+		ubase.set({points:p});
+	}
+	/**
+	 * @function getPoints
+	 * Retrieves the amount of points that the user has in the database
+	 */
+	var getPoints = function(){
+		ubase.child('points').on('value', function(dataSnapshot){
+			p = parseInt(dataSnapshot.val());
+			console.log(p);
+			points=p;
+		});
+		
+		return parseInt(p);
+	}
