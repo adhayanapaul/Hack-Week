@@ -93,3 +93,8 @@ body .ui-body-c{
 	position:relative;
 	top:100px;
 }
+
+.symbol{
+	height:200px;
+	width:200px;
+}
