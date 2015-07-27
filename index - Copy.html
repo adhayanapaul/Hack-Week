@@ -320,7 +320,7 @@
 		<div data-role="page" id="t"> 
 			<center>
 			<p> Trash! </p>
-			<p> Sorry, you're hurting the environment. Your tree will suffer.</p>
+			<p> Sorry, you're hurting the environment.</p>
 			<img src = "trashSym.jpg" align="center" class="symbol"> </img>
 			<p></p>
 			<input type="button" value="Go to menu" data-inline="true" data-theme="a" onclick="addTrash()">
@@ -483,6 +483,20 @@
 	<label for="select-choice-3m" class="select"></label>
 		<select name="select-choice-3m" id="select-choice-3m" data-native-menu="false">
 			<option>Is it Foil?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value="Submit" data-theme="b" onClick="FoilToNext()">
+		</select>
+</div>
+
+<div data-role="page" id="MetalFoilStain">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div>
+
+	<label for="select-choice-4m" class="select"></label>
+		<select name="select-choice-4m" id="select-choice-4m" data-native-menu="false">
+			<option>Is it stained with food?</option>
 		   <option value="Yes">Yes</option>
 		   <option value="No">No</option>
 		   <input type="button" value="Submit" data-theme="b" onClick="FoilToDestiny()">

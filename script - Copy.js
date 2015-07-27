@@ -183,11 +183,19 @@ var PageToMaterial = function(){
 		}
 	}
 
+	var FoilToNext = function(){
+		if ($("#select-choice-3m").val() == "Yes"){
+			$.mobile.changePage( "#MetalFoilStain", { transition: "pop", changeHash: true });
+		}else{
+			$.mobile.changePage( "#MetalScrap", { transition: "pop", changeHash: true });
+		}
+	}
+
 	var FoilToDestiny = function(){
 		if ($("#select-choice-3m").val() == "Yes"){
 			$.mobile.changePage( "#t", { transition: "pop", changeHash: true });
 		}else{
-			$.mobile.changePage( "#MetalScrap", { transition: "pop", changeHash: true });
+			$.mobile.changePage( "#r", { transition: "pop", changeHash: true });
 		}
 	}
 
