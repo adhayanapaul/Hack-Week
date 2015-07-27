@@ -22,6 +22,12 @@
 	<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
 
+	<style> 
+	.button{
+		font-family: 'Muli', sans-serif;
+	}
+	</style>
+	
 </head> 
 <body onload="start()" onload="loadLogin()"> 
 
@@ -71,9 +77,9 @@
 		</div>
 	</p>
 
-	<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="searchpage()">
-	<input type="button" value="Carbon Emissions!" data-inline="true" data-theme="a" onclick="carbon()">
-	<input type="button" value="Refresh Points" data-inline="true" data-theme="a" onclick="refresh()">
+	<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="searchpage()" class="button">
+	<input type="button" value="Carbon Emissions!" data-inline="true" data-theme="a" onclick="carbon()" class="button">
+	<input type="button" value="Refresh Points" data-inline="true" data-theme="a" onclick="refresh()" class="button">
 	<div>
 		<img id = "pot" src="tree0.jpg">
 	</div>
