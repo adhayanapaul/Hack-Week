@@ -1,0 +1,549 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="myStyles.css">
+	<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+	<script src = "script - copy.js"> </script>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="maps.js"> </script>
+	<meta type="description" content="Find the distance between two places on the map and the shortest route."/>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+	<link rel="stylesheet" href="themes/green.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+
+	<script type="text/javascript"></script>
+	<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+
+	<style> 
+	.button{
+		font-family: 'Muli', sans-serif;
+	}
+	</style>
+	
+</head> 
+<body onload="start()" onload="loadLogin()"> 
+
+
+
+
+<!--> menu and login and create account pages<-->`
+
+<div data-role="page" id="createLogin">
+	<center>
+		<input type="button" value="Login" data-inline="true" data-theme="a" onclick="goToLogin()">
+		<input type="button" value="Create Account" data-inline="true" data-theme="a" onclick="goToCreate()">	
+	</center>
+</div>
+<div data-role="page" id="create">
+	<center>
+	<form action="action_page.php" class=input>
+		<br>Username:<br>
+		<input type="text" name="create" id="newName" style="width: 300px" value=>
+	</form>
+	<input type="button" value="Create account" data-inline="true" data-theme="a" onclick="createUser()">
+</center>
+</div>
+<div data-role="page" id="login">
+	<center>
+	<form action="action_page.php" class=input>
+		<br>Username:<br>
+		<input type="text" name="name" id="name" style="width: 300px" value=>
+	</form>
+	<input type="button" value="Login" data-inline="true" data-theme="a" onclick="login()">
+</center>
+</div>
+
+
+
+
+
+
+
+
+<!-- menu without pretty-->
+<div data-role="page" id="menu">
+	<center>
+	<h1 id = "growgreen">Grow Green</h1>
+	<p> 
+		<div id = "points">	
+		</div>
+	</p>
+
+
+	<input type="button" value="Throw away an item!" data-inline="true" data-theme="a" onclick="searchpage()">
+	<input type="button" value="Carbon Emissions!" data-inline="true" data-theme="a" onclick="carbon()">
+
+	<div>
+		<img id = "pot" src="tree0.jpg">
+	</div>
+	<div>
+		<input id="refresh" type="button" value="Refresh Points" data-inline="true" data-theme="a" onclick="refresh()">
+	</div>
+	</center>
+</div>	
+
+
+
+
+<!-- Carbon Page -->
+
+<div data-role="page" id="carbon">
+	<div data-role="header">
+		<a href="#menu" id="back" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-power">Quit</a>
+		<h1>Carbon Emission Calculator</h1>
+	</div>
+	<center>
+	<input type="button" value="Calculate the distance between two locations" data-inline="true" data-theme="a" onclick="distance()"><a href="#help" id="custom-btn" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"></a>
+
+	<div data-role="main" class="ui-content">
+
+	    <div data-role="popup" id="help">
+	      <div data-role="header">
+	        <h1>Help</h1>
+	      </div>
+
+	      <div data-role="main" class="ui-content">
+	        <h2>Carbon Emission Calculator</h2>
+	        <p>This will calculate your carbon footprint. Either click this button to input your current location and destination, OR enter in the distance if you know that already.</p>
+	        <p>If your carbon footprint is average, you get no points. If it is over average, you get points deducted. If you are under average, you get more points!</p>
+	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+	      </div>
+
+	      <div data-role="footer">
+	      </div>
+
+	    </div>
+  </div>
+
+	<p> OR </p>
+	<form action="action_page.php" class=input>
+		Distance Traveled (miles):<br>
+		<input type="number" name="distance" id="distance" value=>
+		<br>MPG:<br>
+		<input type="number" name="mpg" id="mpg" value=>
+		<br><br>
+		<input type="submit" value="Submit" onclick="calculations()">
+	</form>
+</center>
+</div>
+
+
+<div data-role="page" id="footprintShort">
+	<center>
+	<p> You should go on a walk</p>
+	<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="menuReturn()">
+	
+	<div class = "gallons">
+	</div>
+
+	<div class = "kg">
+	</div>
+
+	</center>
+</div>
+<div data-role="page" id="footprintAvg">
+	<center>
+	<p> You're average, good job!</p>
+	<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="menuReturn()">
+	<div class = "gallons">
+	</div>
+
+	<div class = "kg">
+	</div>
+</center>
+</div>
+<div data-role="page" id="footprintMore">
+	<center>
+	<p>Try to drive less, pts reduction</p>
+	<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="menuReturn()">
+	<div class = "gallons">
+	</div>
+
+	<div class = "kg">
+	</div>
+</center>
+</div>
+<div data-role="page" id="footprintLess">
+	<center>
+	<p>Good job, more points</p>
+	<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="menuReturn()">
+	<div class = "gallons">
+	</div>
+
+	<div class = "kg">
+	</div>
+	</center>
+</div>
+
+
+
+
+
+
+
+
+<!-- Search Page  -->
+<!--document.getElementById("inputaddress").value = '';-->
+<div data-role="page" id="searchPage">
+			<div data-role="header">
+				<a href="#menu" id="back" class="ui-btn ui-corner-all ui-btn-inline ui-mini footer-button-left ui-btn-icon-left ui-icon-power">Quit</a>
+				<h1>What are you throwing away?</h1>
+
+			</div>
+			<div data-role="content" >	
+			</div>
+		<center>
+		<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search item..." data-inset="true">
+			<li><a href="#c">Food</a></li>
+			<li><a href="#r">Aluminum Can</a></li>
+			<li><a href="#r">Aluminum Foil</a></li>
+			<li><a href="#r">Plastic Bottle</a></li>
+			<li><a href="#r">Paper</a></li>
+			<li><a href="#t">Cling Wrap</a></li>
+			<li><a href="#t">Ziploc Bags</a></li>
+			<li><a href="#christy">Christy</a><li>
+			<li><a href="#c">Eggshells</a></li>
+			<li><a href="#anya">Anya</a></li>
+			<li><a href="#c">Yard Waste (Leaves, Grass, Clippings, etc.)</a></li>
+			<li><a href="#r">Cardboard Box</a></li>
+			<li><a href="#t">Clothes</a></li>
+			<li><a href="#r">Steel Cans</a></li>
+			<li><a href="#r">Magazines</a></li>
+			<li><a href="#t">Paint</a></li>
+			<li><a href="#r">Glass Bottle</a></li>
+			<li><a href="#r">Glass Jars</a></li>
+			<li><a href="#paper">Napkins</a></li>
+			<li><a href="#c">Hair/Fur</a></li>
+			<li><a href="#c">Wood Chips</a></li>
+			<li><a href="#c">Matches</a></li>
+			<li><a href="#c">Receipts</a></li>
+			<li><a href="#c">Pencil Shavings</a></li>
+			<li><a href="#c">Lint</a></li>
+			<li><a href="#c">Straw</a></li>
+			<li><a href="#r">Tin Cans</a></li>
+			<li><a href="#r">Shredded Paper</a></li>
+			<li><a href="#r">Books</a></li>
+			<li><a href="#c">Cotton Balls (Unsoaked)</a></li>
+			<li><a href="#t">Wrapping Paper</a></li>
+			<li><a href="#c">Pizza Boxes</a></li>
+			<li><a href="#h">Batteries</a></li>
+			<li><a href="#h">Lightbulbs</a></li>
+			<li><a href="#h">Electronic Appliances</a></li>
+			<li><a href="#tc">Mirrors</a></li>
+			<li><a href="#tc">Window Glass</a></li>
+			<li><a href="#tc">Carpet</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#t">Ceramics</a></li>
+			<li><a href="#r">Phone Book</a></li>
+			<li><a href="#t">Wax Paper</a></li>
+			<li><a href="#t">Ziploc Bags</a></li>
+			<li><a href="#tc">Ink Cartridge</a></li>
+			<li><a href="#t">Candy Wrappers</a></li>
+			<li><a href="#paper">Paper Plates</a></li>
+			<li><a href="#c">Apple core</a></li>
+			<li><a href="#c">Pizza Crust</a></li>
+			<li><a href="#c">Cherry Seeds</a></li>
+			<li><a href="#c">Banana Peel</a></li>
+			<li><a href="#c">Orange Peel</a></li>
+			<li><a href="#h">Nail Polish</a></li>
+			<li><a href="#c">Orange Peel</a></li>
+			<li><a href="#r">Aluminum Can</a></li>
+			<li><a href="#h">Computer</a></li>
+			<li><a href="#h">Laptop</a></li>
+			<li><a href="#h">Monitor</a></li>
+			<li><a href="#r">Tin Can</a></li>
+			<li><a href="#tc">CD or DVD</a></li>
+			<li><a href="#tc">Tires</a></li>
+			<li><a href="#r">Plastic Bags</a></li>
+			<li><a href="#r">Plastic Container</a></li>
+			<li><a href="#h">Paint</a></li>
+			<li><a href="#c">Wood</a></li>
+			<li><a href="#tc">Furniture</a></li>
+			<li><a href="#r">Spray Can (empty)</a></li>
+			<li><a href="#paper">Paper Cup</a></li>
+			<li><a href="#r">Tupperware</a></li>
+			<li><a href="#r">Plastic Utensils (Spoon, Fork, Knife)</a></li>
+			<li><a href="#r">Egg Carton</a></li>
+			<li><a href="#t">Coat Hanger</a></li>
+			<li><a href="#tc">Furniture</a></li>
+			<li><a href="#tc">Furniture</a></li>
+			<li><a href="#tc">Furniture</a></li>
+			<li><a href="#tc">Furniture</a></li>
+			<li><a href="#tc">Furniture</a></li>
+			<li><a href="#tc">Furniture</a></li>
+			
+			
+			
+			
+
+
+		
+
+				
+		</ul>
+		<a href="#Select a Material" data-role="button" style="font-family: 'Muli', sans-serif;"> Click here if your item is not listed! </a>
+		
+		<a href="#compostHelp" id="custom-btn" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"></a>
+				
+
+				<div data-role="main" class="ui-content">
+
+			    <div data-role="popup" id="compostHelp">
+			      <div data-role="header">
+			        <h1>Help</h1>
+			      </div>
+
+			      <div data-role="main" class="ui-content">
+			        <h2>What to Compost</h2>
+			        <p>Anything that can be composted can also be thrown away, if you don't have a compost bin.</p>
+			        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+			      </div>
+
+			      <div data-role="footer">
+			      </div>
+
+			    </div>
+		  		</div>
+
+		</div>
+	</center>
+
+
+
+
+
+
+<!-- Define what to do with material / end pages -->
+
+		<div data-role="page" id= "r"> 
+			<center>
+			<h5> Recycle! </h5>
+			<p> You've gained 1 point for your tree! <p>
+			<img src = "recycleSym.jpg" align="center" class="symbol"> </img>
+			<p></p>
+			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="addRecycle()">
+			</center>	
+		</div>
+
+		<div data-role="page" id= "h"> 
+			<center>
+			<p> This is a hazardous material. Look up how to dispose of it correctly. Sorry :(</p>
+			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="menuReturn()">
+			</center>	
+		</div>
+
+		<div data-role="page" id= "tc"> 
+			<center>
+			<p> Sorry, this does not go into any bin. Look up how to dispose of it correctly. </p>
+			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="menuReturn()">
+			</center>	
+		</div>
+
+		<div data-role="page" id="t"> 
+			<center>
+			<p> Trash! </p>
+			<p> Sorry, you're hurting the environment.</p>
+			<img src = "trashSym.jpg" align="center" class="symbol"> </img>
+			<p></p>
+			<input type="button" value="Go to menu" data-inline="true" data-theme="a" onclick="addTrash()">
+			</center>
+		</div>
+
+		<div data-role="page" id="c"> 
+			<center>
+			<h5> Compost! </h5>
+			<p> You've gained 2 points for your tree! </p>
+			<img src = "compostSym.jpg" align="center" class="symbol"> </img>
+			<p></p>
+			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="addCompost()">
+			</center>	
+		</div>
+
+		<div data-role="page" id= "anya"> 
+			<center>
+				<img src = "AnyaRecycle.gif" align="center"> </img>
+			</center>
+		</div>
+
+		<div data-role="page" id= "christy"> 
+			<img src = "Christy.png" align="center"> </img>
+			<img src = "arrow1.jpg" align="center"> </img>
+			<img src = "compost.jpg" align="center"> </img>
+		</div>
+
+
+
+
+
+
+
+<!-- Tree -->
+
+<div data-role="page" id="Select a Material">
+	<div data-role="header">
+		<h1>What material is your item made of?</h1>
+	</div>
+
+	<label for="select-choice-1m" class="select"></label>
+		<select name="select-choice-1m" id="select-choice-1m" data-native-menu="false">
+		   <option >Select A Material</option>
+		   <option value="Plastic">Plastic</option>
+		   <option value="Paper/Cardboard">Paper/Cardboard</option>
+		   <option value="Styrofoam">Styrofoam</option>
+		   <option value="Glass">Glass</option>
+		   <option value="Metals">Metals</option>
+		   <option value="Food">Food</option>
+		   <option value="Electronic Appliance">Electronic Appliance</option>
+		   <input type="button" value="Submit" data-theme="b" onClick="PageToMaterial()">
+		</select>
+</div>
+
+<!-- Plastic Code -->
+<div data-role="page" id="pagePlastic">
+
+	<div data-role="header">
+		<h1>Plastic</h1>
+	</div>
+
+	<label for="select-choice-1" class="select"></label>
+		<select name="select-choice-1" id="select-choice-2p" data-native-menu="false">
+			<option>Does it say that the plastic is compostable?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value= "Submit" data-theme="b" onclick="changePlasticPage()">
+		</select>
+	</div>
+</div>
+
+<div data-role="page" id="pagePlasticRec">
+
+	<div data-role="header">
+		<h1>Plastic</h1>
+	</div>
+
+	<div data-role="content">
+		<label for="select-choice-1" class="select"></label>
+		<select name="select-choice-1" id="select-choice-3p" data-native-menu="false">
+		   <option>Is there a recycling symbol on the plastic?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value= "Submit" data-theme="b" onclick="changePlasticRecPage()">
+		</select>
+	</div>
+	
+</div>
+
+
+<!-- Paper/Cardboard Code -->
+<div data-role="page" id="paper">
+	<div data-role="header">
+			<h1>Paper/Cardboard</h1>
+	</div>
+	<div data-role="content">
+		<label for="select-choice-0" class="select"></label>
+		<select name="select-choice-0" id="select-choice-1c" data-native-menu="false">
+	   		<option value=>Is your paper/cardboard item food soaked?</option>
+	   		<option id="yes" value="yes">Yes</option>
+	  		<option id="no" value="no">No</option>
+	  		<input type="button" value="Submit"data-theme="b" onclick="changePaper()">
+		</select>
+	</div>
+</div>
+
+<!-- Glass Code -->
+<div data-role="page" id="pageGlass">
+
+	<div data-role="header">
+		<h1>Glass</h1>
+	</div>
+
+	<label for="select-choice-1g" class="select"></label>
+		<select name="select-choice-1g" id="select-choice-1g" data-native-menu="false">
+			<option>Is the glass broken?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value= "Submit" data-theme="b" onclick="changeGlassPage()">
+		</select>
+
+
+	</div>
+
+</div>
+
+<div data-role="page" id="pageNotBroken">
+
+	<div data-role="header">
+		<h1>Glass</h1>
+	</div>
+	<center>
+	<div data-role="content">
+		<p> Recycle unbroken glass, unless it is from a mirror, window, or lightbulb </p>
+	</div>
+	</center>
+	
+</div>
+
+<!-- Metal Code -->
+<div data-role="page" id="MetalCan">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div>
+
+	<label for="select-choice-2m" class="select"></label>
+		<select name="select-choice-2m" id="select-choice-2m" data-native-menu="false">
+			<option>Is it a Bottle or a Can?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value="Submit" data-theme="b" onClick="CanToDestiny()">
+		</select>
+</div>
+
+<div data-role="page" id="MetalFoil">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div>
+
+	<label for="select-choice-3m" class="select"></label>
+		<select name="select-choice-3m" id="select-choice-3m" data-native-menu="false">
+			<option>Is it Foil?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value="Submit" data-theme="b" onClick="FoilToNext()">
+		</select>
+</div>
+
+<div data-role="page" id="MetalFoilStain">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div>
+
+	<label for="select-choice-4m" class="select"></label>
+		<select name="select-choice-4m" id="select-choice-4m" data-native-menu="false">
+			<option>Is it stained with food?</option>
+		   <option value="Yes">Yes</option>
+		   <option value="No">No</option>
+		   <input type="button" value="Submit" data-theme="b" onClick="FoilToDestiny()">
+		</select>
+</div>
+
+<div data-role="page" id="MetalScrap">
+	<div data-role="header">
+		<h1>Metals</h1>
+	</div>
+	<center>
+	<div data-role="content">	
+		<p>To the scrap metal center!</p>		
+	</div>
+	</center>
+</div>
+
+
+</body>
+</html>
