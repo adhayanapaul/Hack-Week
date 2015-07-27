@@ -50,18 +50,18 @@ h1{
 	padding-left: 40%;
 }
 
-p, br{
+p{
 	font-family: 'Muli', sans-serif;
 }
 
-#custom-btn {
-    width: 2px !important;
-    height: 10px !important;
-    border-radius: 50% !important;
-    background: url("Question.png") center center no-repeat;
+br{
+	font-family: 'Muli', sans-serif;
 }
 
-#custom-btn span span {
-    height: 10px !important;  
-    line-height: 7px;
+* {
+    font-family: 'Muli', sans-serif; !important;
+}
+
+.ui-header{
+	font-size: 40px;
 }
