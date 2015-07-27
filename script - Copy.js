@@ -168,7 +168,7 @@ var PageToMaterial = function(){
 			$.mobile.changePage( "#c", { transition: "pop", changeHash: true });
 		}else if ($("#select-choice-1m").val() == "Paper/Cardboard"){
 			$.mobile.changePage( "#paper", { transition: "pop", changeHash: true });
-		else if ($("#select-choice-1m").val() == "Electronic Appliance"){
+		}else if ($("#select-choice-1m").val() == "Electronic Appliance"){
 			$.mobile.changePage( "#h", { transition: "pop", changeHash: true });
 		}else{
 			$.mobile.changePage( "#Select A Material", { transition: "pop", changeHash: true });
