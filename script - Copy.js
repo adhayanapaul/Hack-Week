@@ -4,13 +4,13 @@ var kg = 0;
 var points = 0;
 var p = 0;
 var start = function(){
-	points= 0;
 	$("#points").append("Points: "+ points);
 	grow();
 }
 
 var refresh = function(){
 	points=0;
+	setPoints(points);
 	$("#points").empty();
 	start();
 }
@@ -241,8 +241,6 @@ var goBack =function(){
 		try{
 			ubase = database.child(document.getElementById('name').value);
 			//Go to the menu
-			document.cookie="username=John Doe"
-			//alert(document.cookie);
 			getPoints();
 			window.setTimeout(function(){menuReturn();}, 200);
 		}
@@ -293,7 +291,6 @@ var loadLogin = function(){
 	var getPoints = function(){
 		ubase.child('points').on('value', function(dataSnapshot){
 			p = parseInt(dataSnapshot.val());
-			console.log(p);
 			points=p;
 		});
 		
