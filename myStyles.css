@@ -34,13 +34,22 @@
 #t{
 	font-size:140%;
 }
-h1{
+
+#growgreen{
 	font-family: 'Grand Hotel', cursive;
 	color:#119620;
 	font-size:500%;
 }
 
+h1{
+	color:#ffffff;
+	font-family: 'Grand Hotel', cursive;
+}
 .input{
 	padding-right: 40%;
 	padding-left: 40%;
+}
+
+p, br{
+	font-family: 'Muli', sans-serif;
 }
