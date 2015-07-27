@@ -14,7 +14,8 @@
 }
 #menu{
 	/*border: thick solid #EDF0A3;*/
-	border-right: 30px solid #EDF0A3;
+	border-right: 20px solid #EDF0A3;
+	border-left: 20px solid #EDF0A3;
 	background-color:white;
 	background-image:url("background");
 
