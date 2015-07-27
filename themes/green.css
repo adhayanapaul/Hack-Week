@@ -224,7 +224,7 @@ html .ui-alt-icon .ui-radio-off:after {
 html .ui-bar-a .ui-bar-inherit,
 html .ui-body-a .ui-bar-inherit,
 html body .ui-group-theme-a .ui-bar-inherit {
-	background-color: #4ccd61 /*{a-bar-background-color}*/;
+	background-color: #7de24b /*{a-bar-background-color}*/;
 	border-color: #dbddda /*{a-bar-border}*/;
 	color: #ffffff /*{a-bar-color}*/;
 	text-shadow: 0 /*{a-bar-shadow-x}*/ 1px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ #4e8532 /*{a-bar-shadow-color}*/;
@@ -250,7 +250,7 @@ html .ui-bar-a .ui-body-inherit,
 html .ui-body-a .ui-body-inherit,
 html body .ui-group-theme-a .ui-body-inherit,
 html .ui-panel-page-container-a {
-	background-color: #e7fee2 /*{a-body-background-color}*/;
+	background-color: #fffecc /*{a-body-background-color}*/;
 	border-color: #d4edce /*{a-body-border}*/;
 	color: #000000 /*{a-body-color}*/;
 	text-shadow: 0 /*{a-body-shadow-x}*/ 1px /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ #f5f5f4 /*{a-body-shadow-color}*/;
@@ -297,7 +297,7 @@ html .ui-bar-a .ui-btn:visited,
 html .ui-body-a .ui-btn:visited,
 html body .ui-group-theme-a .ui-btn:visited,
 html head + body .ui-btn.ui-btn-a:visited {
-	background-color: #effea5 /*{a-bup-background-color}*/;
+	background-color: #fffecc /*{a-bup-background-color}*/;
 	border-color: #dddddd /*{a-bup-border}*/;
 	color: #333333 /*{a-bup-color}*/;
 	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
@@ -308,7 +308,7 @@ html .ui-bar-a .ui-btn:hover,
 html .ui-body-a .ui-btn:hover,
 html body .ui-group-theme-a .ui-btn:hover,
 html head + body .ui-btn.ui-btn-a:hover {
-	background-color: #e0f480 /*{a-bhover-background-color}*/;
+	background-color: #f1fdb4 /*{a-bhover-background-color}*/;
 	border-color: #dddddd /*{a-bhover-border}*/;
 	color: #333333 /*{a-bhover-color}*/;
 	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 0 /*{a-bhover-shadow-radius}*/ #f3f3f3 /*{a-bhover-shadow-color}*/;
@@ -348,7 +348,7 @@ html .ui-bar-a .ui-slider-track .ui-btn-active,
 html .ui-body-a .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-a .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-a .ui-btn-active {
-	background-color: #b5faa3 /*{a-active-background-color}*/;
+	background-color: #d2fe9a /*{a-active-background-color}*/;
 	border-color: #cfd0cd /*{a-active-border}*/;
 	color: #000000 /*{a-active-color}*/;
 	text-shadow: 0 /*{a-active-shadow-x}*/ 1px /*{a-active-shadow-y}*/ 0 /*{a-active-shadow-radius}*/ #cfd0cd /*{a-active-shadow-color}*/;
@@ -359,7 +359,7 @@ html .ui-bar-a .ui-radio-on:after,
 html .ui-body-a .ui-radio-on:after,
 html body .ui-group-theme-a .ui-radio-on:after,
 .ui-btn.ui-radio-on.ui-btn-a:after {
-	border-color: #b5faa3 /*{a-active-background-color}*/;
+	border-color: #d2fe9a /*{a-active-background-color}*/;
 }
 /* Focus */
 .ui-page-theme-a .ui-btn:focus,
@@ -374,9 +374,9 @@ html .ui-body-a .ui-focus,
 html body .ui-group-theme-a .ui-focus,
 html head + body .ui-btn-a.ui-focus,
 html head + body .ui-body-a.ui-focus {
-	-webkit-box-shadow: 0 0 12px #b5faa3 /*{a-active-background-color}*/;
-	-moz-box-shadow: 0 0 12px #b5faa3 /*{a-active-background-color}*/;
-	box-shadow: 0 0 12px #b5faa3 /*{a-active-background-color}*/;
+	-webkit-box-shadow: 0 0 12px #d2fe9a /*{a-active-background-color}*/;
+	-moz-box-shadow: 0 0 12px #d2fe9a /*{a-active-background-color}*/;
+	box-shadow: 0 0 12px #d2fe9a /*{a-active-background-color}*/;
 }
 /* B
 -----------------------------------------------------------------------------------------------------------*/

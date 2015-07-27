@@ -36,18 +36,22 @@
 	</center>
 </div>
 <div data-role="page" id="create">
-	<form action="action_page.php">
+	<center>
+	<form action="action_page.php" class=input>
 		<br>Username:<br>
 		<input type="text" name="create" id="newName" style="width: 300px" value=>
 	</form>
 	<input type="button" value="Create account" data-inline="true" data-theme="a" onclick="createUser()">
+</center>
 </div>
 <div data-role="page" id="login">
-	<form action="action_page.php">
+	<center>
+	<form action="action_page.php" class=input>
 		<br>Username:<br>
 		<input type="text" name="name" id="name" style="width: 300px" value=>
 	</form>
 	<input type="button" value="Login" data-inline="true" data-theme="a" onclick="login()">
+</center>
 </div>
 
 
@@ -60,7 +64,7 @@
 <!-- menu without pretty-->
 <div data-role="page" id="menu">
 	<center>
-	<h1 id="growgreen">Grow Green</h1>
+	<h1>Grow Green</h1>
 	<p> 
 		<div id = "points">	
 		</div>
@@ -84,11 +88,11 @@
 	<center>
 <input type="button" value="Calculate the distance between two points" data-inline="true" data-theme="a" onclick="distance()">
 <p> </p>
-	<form action="action_page.php">
+	<form action="action_page.php" class=input>
 		Distance Traveled (miles):<br>
-		<input type="number" name="distance" id="distance" style="width: 300px" value=>
+		<input type="number" name="distance" id="distance" value=>
 		<br>MPG:<br>
-		<input type="number" name="mpg" id="mpg" style="width: 300px"value=>
+		<input type="number" name="mpg" id="mpg" value=>
 		<br><br>
 		<input type="submit" value="Submit" onclick="calculations()">
 	</form>
@@ -150,13 +154,14 @@
 
 
 <!-- Search Page  -->
-
+<!--document.getElementById("inputaddress").value = '';-->
 <div data-role="page" id="searchPage">
 			<div data-role="header">
 				<h1>Rise Against Pollution</h1>
 			</div>
-			<div data-role="content">	
+			<div data-role="content" >	
 			</div>
+		<center>
 		<ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search item..." data-inset="true">
 			<li><a href="#c">Food</a></li>
 			<li><a href="#r">Aluminum Can</a></li>
@@ -172,6 +177,7 @@
 		</ul>
 		<a href="#Select a Material"> Click here if your item is not listed! </a>
 		</div>
+	</center>
 
 
 
@@ -204,9 +210,7 @@
 		</div>
 
 		<div data-role="page" id= "anya"> 
-			<img src = "anya.png" align="center"> </img>
-			<img src = "arrow1.jpg" align="center"> </img>
-			<img src = "Recycling.jpg" align="center"> </img>
+			<img src = "AnyaRecycle.png" align="center"> </img>
 		</div>
 
 		<div data-role="page" id= "christy"> 
