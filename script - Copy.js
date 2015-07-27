@@ -98,9 +98,13 @@ var carbon = function(){
 	$.mobile.changePage( "#carbon", { transition: "pop", changeHash: true });
 }
 
-var goToLogin = function(){
+$( "#login" ).click(function() {
+  alert( ho);
+});
+
+ var goToLogin = function(){
 	$.mobile.changePage( "#login", { transition: "pop", changeHash: true });
-}
+ }
 
 var goToCreate = function(){
 	$.mobile.changePage( "#create", { transition: "pop", changeHash: true });
