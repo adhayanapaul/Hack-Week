@@ -33,7 +33,7 @@
 <div data-role="page" id="createLogin">
 	<center>
 		<input type="button" value="Login" data-inline="true" data-theme="a" onclick="goToLogin()">
-		<input type="button" value="Creat Account" data-inline="true" data-theme="a" onclick="goToCreate()">	
+		<input type="button" value="Create Account" data-inline="true" data-theme="a" onclick="goToCreate()">	
 	</center>
 </div>
 <div data-role="page" id="create">
@@ -90,10 +90,9 @@
 		<h1>Carbon Emission Calculator</h1>
 	</div>
 	<center>
-	<input type="button" value="Calculate the distance between two points" data-inline="true" data-theme="a" onclick="distance()">
+	<input type="button" value="Calculate the distance between two points" data-inline="true" data-theme="a" onclick="distance()"><a href="#help" id="custom-btn" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"></a>
 
 	<div data-role="main" class="ui-content">
-    <a href="#help" id="custom-btn" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"></a>
 
 	    <div data-role="popup" id="help">
 	      <div data-role="header">
@@ -102,7 +101,7 @@
 
 	      <div data-role="main" class="ui-content">
 	        <h2>Carbon Emission Calculator</h2>
-	        <p>This is some help.</p>
+	        <p>This will calculate your carbon footprint. Either click this button to input your current location and destination, OR enter in the distance if you know that already.</p>
 	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
 	      </div>
 
