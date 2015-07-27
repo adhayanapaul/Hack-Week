@@ -100,7 +100,7 @@
 		<h1>Carbon Emission Calculator</h1>
 	</div>
 	<center>
-	<input type="button" value="Calculate the distance between two points" data-inline="true" data-theme="a" onclick="distance()"><a href="#help" id="custom-btn" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"></a>
+	<input type="button" value="Calculate the distance between two locations" data-inline="true" data-theme="a" onclick="distance()"><a href="#help" id="custom-btn" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"></a>
 
 	<div data-role="main" class="ui-content">
 
@@ -112,6 +112,7 @@
 	      <div data-role="main" class="ui-content">
 	        <h2>Carbon Emission Calculator</h2>
 	        <p>This will calculate your carbon footprint. Either click this button to input your current location and destination, OR enter in the distance if you know that already.</p>
+	        <p>If your carbon footprint is average, you get no points. If it is over average, you get points deducted. If you are under average, you get more points!</p>
 	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
 	      </div>
 
@@ -210,11 +211,78 @@
 			<li><a href="#christy">Christy</a><li>
 			<li><a href="#c">Eggshells</a></li>
 			<li><a href="#anya">Anya</a></li>
-			<li><a href="#r">Newspaper</a></li>
+			<li><a href="#c">Yard Waste (Leaves, Grass, Clippings, etc.)</a></li>
+			<li><a href="#r">Cardboard Box</a></li>
+			<li><a href="#t">Clothes</a></li>
+			<li><a href="#r">Steel Cans</a></li>
+			<li><a href="#r">Magazines</a></li>
+			<li><a href="#t">Paint</a></li>
+			<li><a href="#r">Glass Bottle</a></li>
+			<li><a href="#r">Glass Jars</a></li>
+			<li><a href="#paper">Napkins</a></li>
+			<li><a href="#c">Hair/Fur</a></li>
+			<li><a href="#c">Wood Chips</a></li>
+			<li><a href="#c">Matches</a></li>
+			<li><a href="#c">Receipts</a></li>
+			<li><a href="#c">Pencil Shavings</a></li>
+			<li><a href="#c">Lint</a></li>
+			<li><a href="#c">Straw</a></li>
+			<li><a href="#r">Tin Cans</a></li>
+			<li><a href="#r">Shredded Paper</a></li>
+			<li><a href="#r">Books</a></li>
+			<li><a href="#c">Cotton Balls (Unsoaked)</a></li>
+			<li><a href="#t">Wrapping Paper</a></li>
+			<li><a href="#c">Pizza Boxes</a></li>
+			<li><a href="#h">Batteries</a></li>
+			<li><a href="#h">Lightbulbs</a></li>
+			<li><a href="#h">Electronic Appliances</a></li>
+			<li><a href="#tc">Mirrors</a></li>
+			<li><a href="#tc">Window Glass</a></li>
+			<li><a href="#tc">Carpet</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#c">Straw</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			<li><a href="#h">Phone</a></li>
+			
+						
+			
 
 				
 		</ul>
 		<a href="#Select a Material" data-role="button" style="font-family: 'Muli', sans-serif;"> Click here if your item is not listed! </a>
+		
+		<a href="#compostHelp" id="custom-btn" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"></a>
+				
+
+				<div data-role="main" class="ui-content">
+
+			    <div data-role="popup" id="compostHelp">
+			      <div data-role="header">
+			        <h1>Help</h1>
+			      </div>
+
+			      <div data-role="main" class="ui-content">
+			        <h2>What to Compost</h2>
+			        <p>Anything that can be composted can also be thrown away, if you don't have a compost bin.</p>
+			        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left" data-rel="back">Go Back</a>
+			      </div>
+
+			      <div data-role="footer">
+			      </div>
+
+			    </div>
+		  		</div>
+
 		</div>
 	</center>
 
@@ -230,7 +298,20 @@
 			<p> Recycle! </p>
 			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="addRecycle()">
 			</center>	
+		</div>
 
+		<div data-role="page" id= "h"> 
+			<center>
+			<p> This is a hazardous material. Look up how to dispose of it correctly. Sorry :(</p>
+			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="menuReturn()">
+			</center>	
+		</div>
+
+		<div data-role="page" id= "tc"> 
+			<center>
+			<p> Sorry, this does not go into any bin. Look up how to dispose of it correctly. </p>
+			<input type="button" value="Make your tree grow!" data-inline="true" data-theme="a" onclick="menuReturn()">
+			</center>	
 		</div>
 
 		<div data-role="page" id="t"> 
@@ -282,6 +363,7 @@
 		   <option value="Glass">Glass</option>
 		   <option value="Metals">Metals</option>
 		   <option value="Food">Food</option>
+		   <option value="Electronic Appliance">Electronic Appliance</option>
 		   <input type="button" value="Submit" data-theme="b" onClick="PageToMaterial()">
 		</select>
 </div>
@@ -330,7 +412,7 @@
 	<div data-role="content">
 		<label for="select-choice-0" class="select"></label>
 		<select name="select-choice-0" id="select-choice-1c" data-native-menu="false">
-	   		<option value=>Is your paper/cardboard food soaked?</option>
+	   		<option value=>Is your paper/cardboard item food soaked?</option>
 	   		<option id="yes" value="yes">yes</option>
 	  		<option id="no" value="no">no</option>
 	  		<input type="button" value="Submit"data-theme="b" onclick="changePaper()">
