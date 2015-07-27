@@ -50,6 +50,18 @@ h1{
 	padding-left: 40%;
 }
 
-p, br{
+p{
 	font-family: 'Muli', sans-serif;
+}
+
+br{
+	font-family: 'Muli', sans-serif;
+}
+
+* {
+    font-family: 'Muli', sans-serif; !important;
+}
+
+.ui-header{
+	font-size: 40px;
 }
