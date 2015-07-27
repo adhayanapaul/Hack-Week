@@ -4,6 +4,7 @@ var kg = 0;
 var points = 0;
 var p = 0;
 var start = function(){
+	alert("hi")
 	$("#points").append("Points: "+ points);
 	grow();
 }
