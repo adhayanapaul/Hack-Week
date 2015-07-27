@@ -102,3 +102,9 @@ body .ui-body-c{
 	height:200px;
 	width:200px;
 }
+
+#top{
+	font-family: 'Grand Hotel', sans-serif;
+    font-size:200%;
+    color: #15BD47;
+}
