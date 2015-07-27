@@ -53,3 +53,15 @@ h1{
 p, br{
 	font-family: 'Muli', sans-serif;
 }
+
+#custom-btn {
+    width: 2px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    background: url("Question.png") center center no-repeat;
+}
+
+#custom-btn span span {
+    height: 10px !important;  
+    line-height: 7px;
+}
