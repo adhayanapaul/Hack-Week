@@ -82,7 +82,11 @@ var menuReturn = function(){
 	$("#points").empty();
 	grow();
 	$("#points").append("Points: "+ points);
+	document.getElementById("distance").value = '';
+	document.getElementById("mpg").value = '';
 
+	 $('input[data-type="search"]').val('');
+    $('input[data-type="search"]').trigger("keyup");
 }
 
 
