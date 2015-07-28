@@ -25,6 +25,12 @@
 	.button{
 		font-family: 'Muli', sans-serif;
 	}
+
+		#logo{
+		width:400px;
+		height:120px;
+	}
+
 	</style>
 	
 </head> 
@@ -34,7 +40,10 @@
 
 
 
+
 <div data-role="page" id="createLogin">
+	<center><img src = "GrowGreenLogo.png" id="logo"></center>
+	<p></p>
 	<center>
 		<input type="button" id="login" value="Login" data-inline="true" data-theme="a" onclick="goToLogin()">
 		<input type="button" value="Create Account" data-inline="true" data-theme="a" onclick="goToCreate()">	
@@ -70,6 +79,21 @@
 <div data-role="page" id="menu">
 	<center>
 	<h1 id = "growgreen">Grow Green</h1>
+
+	<style>
+	#sun{
+	    position: absolute;
+	    right: 330px;
+	    top:0px;
+	    width: 300px;
+	    padding: 10px;
+}
+	</style>
+
+	<div id = "sun">
+		<img src="sun.png" >
+	</div>
+
 	<p> 
 		<div id = "points">	
 		</div>
@@ -449,8 +473,8 @@
 		<label for="select-choice-0" class="select"></label>
 		<select name="select-choice-0" id="select-choice-1c" data-native-menu="false">
 	   		<option value=>Is your paper/cardboard item food soaked?</option>
-	   		<option id="yes" value="yes">yes</option>
-	  		<option id="no" value="no">no</option>
+	   		<option id="yes" value="Yes">yes</option>
+	  		<option id="no" value="No">no</option>
 	  		<input type="button" value="Submit"data-theme="b" onclick="changePaper()">
 		</select>
 	</div>
