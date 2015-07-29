@@ -227,10 +227,10 @@ var PageToMaterial = function(){
 	}
 
 	var changePaper =function(){
-	if ($("#select-choice-1c").val()=="yes"){
+	if ($("#select-choice-1c").val()=="Yes"){
 		$.mobile.changePage( "#c", { transition: "pop"} );
 	}
-	else if ($("#select-choice-1c").val()=="no"){
+	else if ($("#select-choice-1c").val()=="No"){
 		$.mobile.changePage( "#r", { transition: "pop"} );
 	}
 
