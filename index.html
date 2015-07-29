@@ -42,6 +42,7 @@
 
 
 <div data-role="page" id="createLogin">
+	<br>
 	<center><img src = "GrowGreenLogo.PNG" id="logo"></center>
 	<p></p>
 	<center>
@@ -146,22 +147,22 @@
   </div>
 
 	<p> OR </p>
-	<form action="action_page.php" class=input>
+	<form class=input>
 		Distance Traveled (miles):<br>
 		<input type="number" name="distance" id="distance" value=>
 		<br>MPG:<br>
 		<input type="number" name="mpg" id="mpg" value=>
-		<br><br>
-		<input type="submit" value="Submit" onclick="calculations()">
+		<br>
 	</form>
+	<input type="submit" value="Submit" onclick="calculations()">
 </center>
 </div>
 
 
 <div data-role="page" id="footprintShort">
 	<center>
-	<p> You should go on a walk</p>
-	<input type="button" value="Feed your tree!" data-inline="true" data-theme="a" onclick="menuReturn()">
+	<p> You should walk or bike short distances instead of driving. You have lost 4 points.</p>
+	<input type="button" value="Go to tree" data-inline="true" data-theme="a" onclick="menuReturn()">
 	
 	<div class = "gallons">
 	</div>
@@ -173,8 +174,8 @@
 </div>
 <div data-role="page" id="footprintAvg">
 	<center>
-	<p> You're average, good job!</p>
-	<input type="button" value="Feed your tree!" data-inline="true" data-theme="a" onclick="menuReturn()">
+	<p> Your carbon emissions are average. You have not gained any points.</p>
+	<input type="button" value="Go to tree" data-inline="true" data-theme="a" onclick="menuReturn()">
 	<div class = "gallons">
 	</div>
 
@@ -184,8 +185,8 @@
 </div>
 <div data-role="page" id="footprintMore">
 	<center>
-	<p>Try to drive less, you have lost 5 points</p>
-	<input type="button" value="Go Back to Your Tree" data-inline="true" data-theme="a" onclick="menuReturn()">
+	<p>Try to drive less or increase your mpg. You have lost 5 points.</p>
+	<input type="button" value="Go to tree" data-inline="true" data-theme="a" onclick="menuReturn()">
 	<div class = "gallons">
 	</div>
 
@@ -195,7 +196,7 @@
 </div>
 <div data-role="page" id="footprintLess">
 	<center>
-	<p>Good job, more points</p>
+	<p>Good job! You have gained 1 points for your tree!</p>
 	<input type="button" value="Feed your tree!" data-inline="true" data-theme="a" onclick="menuReturn()">
 	<div class = "gallons">
 	</div>
@@ -353,25 +354,25 @@
 
 		<div data-role="page" id= "h"> 
 			<center>
-			<p> This is a hazardous material. Look up how to dispose of it correctly. Sorry :(</p>
-			<input type="button" value="Feed your tree!" data-inline="true" data-theme="a" onclick="menuReturn()">
+			<p> This is a hazardous material. Look up how to dispose of it correctly. </p>
+			<input type="button" value="Go to tree" data-inline="true" data-theme="a" onclick="menuReturn()">
 			</center>	
 		</div>
 
 		<div data-role="page" id= "tc"> 
 			<center>
 			<p> Sorry, this does not go into any bin. Look up how to dispose of it correctly. </p>
-			<input type="button" value="Feed your tree!" data-inline="true" data-theme="a" onclick="menuReturn()">
+			<input type="button" value="Go to tree" data-inline="true" data-theme="a" onclick="menuReturn()">
 			</center>	
 		</div>
 
 		<div data-role="page" id="t"> 
 			<center>
 			<p> Trash! </p>
-			<p> Sorry, you're hurting the environment.</p>
+			<p> Sorry, you will not gain any points for your tree.</p>
 			<img src = "trashSym.jpg" align="center" class="symbol"> </img>
 			<p></p>
-			<input type="button" value="Go to menu" data-inline="true" data-theme="a" onclick="addTrash()">
+			<input type="button" value="Go to tree" data-inline="true" data-theme="a" onclick="addTrash()">
 			</center>
 		</div>
 

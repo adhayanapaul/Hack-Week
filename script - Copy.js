@@ -45,26 +45,31 @@ var grow = function(){
 		var filename = "tree0.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 7 && points>0){
+	else if (points <= 3 && points>0){
 		var filename = "tree1.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points<= 14 && points>7){
+	else if (points<= 6 && points>3){
 		var filename = "tree2.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 21 && points>14){
+	else if (points <= 9 && points>6){
 		var filename = "tree3.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 28 && points>21){
+	else if (points <= 12 && points>9){
 		var filename = "tree4.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points <= 35 && points>28){
+	else if (points <= 15 && points>12){
 		var filename = "tree5.jpg";
 		$("#pot").attr('src',filename);
 	}
+		else if (points >15){
+		var filename = "tree6.jpg";
+		$("#pot").attr('src',filename);
+	}
+}
 }
 
 
@@ -107,7 +112,7 @@ var goToCreate = function(){
 }
 
 var distance =function(){
-	window.open('try.html')
+	document.location.href = "try.html";
 }
 
 var calculations = function(){
@@ -121,30 +126,30 @@ var calculations = function(){
     	$.mobile.changePage( "#footprintShort", { transition: "pop", changeHash: true });
     	points=points- 4;
     	setPoints(points);
-    	var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
+    	var gallonsString = "You've used " + (gall).toFixed(2) + " gallons of gas!";
     	$(".gallons").append(gallonsString);
     	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2.";
     	$(".kg").append(carbonString);
     }
     else if ((kg<=17)&&(kg>=8)){
 	    $.mobile.changePage( "#footprintAvg", { transition: "pop", changeHash: true });
-	    var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
+	    var gallonsString = "You've used " + (gall).toFixed(2) + " gallons of gas!";
     	$(".gallons").append(gallonsString);
 	}
 	else if (kg>17){
 		$.mobile.changePage( "#footprintMore", { transition: "pop", changeHash: true });
-		var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
+		var gallonsString = "You've used " + (gall).toFixed(2) + " gallons of gas!";
     	$(".gallons").append(gallonsString);
-    	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Shame on you! >:(";
+    	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Try to reduce your emissions.";
     	$(".kg").append(carbonString);
 		points=points- 5;
 		setPoints(points);
 	}
 	else if (kg<8){
 		$.mobile.changePage( "#footprintLess", { transition: "pop", changeHash: true });
-		var gallonsString = "You've used " + (gall).toFixed(2) + " gallons!";
+		var gallonsString = "You've used " + (gall).toFixed(2) + " gallons of gas!";
     	$(".gallons").append(gallonsString);
-    	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Good job! :D";
+    	var carbonString = "You've emitted " + (kg).toFixed(2) + " kilograms of CO2. Good job!";
     	$(".kg").append(carbonString);
 		points=points+1;
 		setPoints(points);
@@ -237,7 +242,7 @@ var PageToMaterial = function(){
 }
 
 var goBack =function(){
-	document.location.href = "index%20-%20Copy.html#carbon";
+	document.location.href = "index.html#carbon";
 }
 
 
