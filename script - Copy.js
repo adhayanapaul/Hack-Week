@@ -65,10 +65,6 @@ var grow = function(){
 		var filename = "tree5.jpg";
 		$("#pot").attr('src',filename);
 	}
-	else if (points >50 && points>35){
-		var filename = "tree6.jpg";
-		$("#pot").attr('src',filename);
-	}
 }
 
 
